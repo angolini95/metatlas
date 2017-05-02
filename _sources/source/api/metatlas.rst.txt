@@ -1,0 +1,239 @@
+.. AUTO-GENERATED FILE -- DO NOT EDIT!
+
+:mod:`metatlas`
+===============
+.. automodule:: metatlas
+
+.. currentmodule:: metatlas
+.. autosummary::
+
+   metatlas.edit_objects
+   metatlas.get_chromatogram
+   metatlas.get_data
+   metatlas.get_heatmap
+   metatlas.get_info
+   metatlas.get_spectrogram
+   metatlas.mzml_to_hdf
+   metatlas.plot_chromatogram
+   metatlas.plot_heatmap
+   metatlas.plot_spectrogram
+   metatlas.remove
+   metatlas.remove_objects
+   metatlas.retrieve
+   metatlas.show_experiments
+   metatlas.show_lcms_run
+   metatlas.store
+   metatlas.to_dataframe
+
+   metatlas.Atlas
+   metatlas.Compound
+   metatlas.CompoundIdentification
+   metatlas.FragmentationReference
+   metatlas.FunctionalSet
+   metatlas.Group
+   metatlas.IdentificationGrade
+   metatlas.LcmsRun
+   metatlas.Method
+   metatlas.MzIntensityPair
+   metatlas.MzReference
+   metatlas.Reference
+   metatlas.RtReference
+   metatlas.Sample
+
+edit_objects
+------------
+
+.. autofunction:: metatlas.edit_objects
+
+get_chromatogram
+----------------
+
+.. autofunction:: metatlas.get_chromatogram
+
+get_data
+--------
+
+.. autofunction:: metatlas.get_data
+
+get_heatmap
+-----------
+
+.. autofunction:: metatlas.get_heatmap
+
+get_info
+--------
+
+.. autofunction:: metatlas.get_info
+
+get_spectrogram
+---------------
+
+.. autofunction:: metatlas.get_spectrogram
+
+mzml_to_hdf
+-----------
+
+.. autofunction:: metatlas.mzml_to_hdf
+
+plot_chromatogram
+-----------------
+
+.. autofunction:: metatlas.plot_chromatogram
+
+plot_heatmap
+------------
+
+.. autofunction:: metatlas.plot_heatmap
+
+plot_spectrogram
+----------------
+
+.. autofunction:: metatlas.plot_spectrogram
+
+remove
+------
+
+.. autofunction:: metatlas.remove
+
+remove_objects
+--------------
+
+.. autofunction:: metatlas.remove_objects
+
+retrieve
+--------
+
+.. autofunction:: metatlas.retrieve
+
+show_experiments
+----------------
+
+.. autofunction:: metatlas.show_experiments
+
+show_lcms_run
+-------------
+
+.. autofunction:: metatlas.show_lcms_run
+
+store
+-----
+
+.. autofunction:: metatlas.store
+
+to_dataframe
+------------
+
+.. autofunction:: metatlas.to_dataframe
+
+
+:class:`Atlas`
+--------------
+
+
+.. autoclass:: Atlas
+ :show-inheritance:
+  :undoc-members:
+
+:class:`Compound`
+-----------------
+
+
+.. autoclass:: Compound
+ :show-inheritance:
+  :undoc-members:
+
+:class:`CompoundIdentification`
+-------------------------------
+
+
+.. autoclass:: CompoundIdentification
+ :show-inheritance:
+  :undoc-members:
+
+:class:`FragmentationReference`
+-------------------------------
+
+
+.. autoclass:: FragmentationReference
+ :show-inheritance:
+  :undoc-members:
+
+:class:`FunctionalSet`
+----------------------
+
+
+.. autoclass:: FunctionalSet
+ :show-inheritance:
+  :undoc-members:
+
+:class:`Group`
+--------------
+
+
+.. autoclass:: Group
+ :show-inheritance:
+  :undoc-members:
+
+:class:`IdentificationGrade`
+----------------------------
+
+
+.. autoclass:: IdentificationGrade
+ :show-inheritance:
+  :undoc-members:
+
+:class:`LcmsRun`
+----------------
+
+
+.. autoclass:: LcmsRun
+ :show-inheritance:
+  :undoc-members:
+
+:class:`Method`
+---------------
+
+
+.. autoclass:: Method
+ :show-inheritance:
+  :undoc-members:
+
+:class:`MzIntensityPair`
+------------------------
+
+
+.. autoclass:: MzIntensityPair
+ :show-inheritance:
+  :undoc-members:
+
+:class:`MzReference`
+--------------------
+
+
+.. autoclass:: MzReference
+ :show-inheritance:
+  :undoc-members:
+
+:class:`Reference`
+------------------
+
+
+.. autoclass:: Reference
+ :show-inheritance:
+  :undoc-members:
+
+:class:`RtReference`
+--------------------
+
+
+.. autoclass:: RtReference
+ :show-inheritance:
+  :undoc-members:
+
+:class:`Sample`
+---------------
+
+
+.. autoclass:: Sample
+ :show-inheritance:
+  :undoc-members:

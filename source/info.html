@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Information &#8212; Metatlas 0.7 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.3.6/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.7',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Administration" href="admin.html" />
+    <link rel="prev" title="metatlas" href="api/metatlas.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+  
+  
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Metatlas</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.7</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/metatlas.html"><code class="docutils literal"><span class="pre">metatlas</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#data-model">Data Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#provenance-model">Provenance Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#visualization">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html#nersc">NERSC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html#mysql">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html#cron">CRON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html#anaconda">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html#r-packages">R packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html#rdkit-pacakge-on-debian-ubuntu">RDKIT Pacakge on Debian/Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html#synchronizing-the-repo">Synchronizing the Repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html#id1">Administration</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Information</a></li>
+<li><a class="reference internal" href="#data-model">Data Model</a></li>
+<li><a class="reference internal" href="#provenance-model">Provenance Model</a></li>
+<li><a class="reference internal" href="#visualization">Visualization</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="api/metatlas.html" title="Previous Chapter: metatlas"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; metatlas</span>
+    </a>
+  </li>
+  <li>
+    <a href="admin.html" title="Next Chapter: Administration"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Administration &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/source/info.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Information</a></li>
+<li><a class="reference internal" href="#data-model">Data Model</a></li>
+<li><a class="reference internal" href="#provenance-model">Provenance Model</a></li>
+<li><a class="reference internal" href="#visualization">Visualization</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="information">
+<h1>Information<a class="headerlink" href="#information" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="data-model">
+<h1>Data Model<a class="headerlink" href="#data-model" title="Permalink to this headline">¶</a></h1>
+<p>The raw data is stored in mzML files at NERSC. The raw data is parsed
+into HDF files for easier access and stored alongside the mzML files.
+The metatlas metadata is stored in a MySQL database at NERSC. There are
+python objects in metabolite atlas that correspond to each object type
+in the table. The python objects are IPython
+(traitlets)[<a class="reference external" href="http://traitlets.readthedocs.org/en/stable/">http://traitlets.readthedocs.org/en/stable/</a>], which allow
+for attribute validation and change notification. The
+(dataset)[<a class="reference external" href="https://dataset.readthedocs.org/en/latest/">https://dataset.readthedocs.org/en/latest/</a>] library is used
+where possible to simplify access to the MySQL database. Otherwise,
+custom queries are created as needed. The dataset library provides
+custom table schema creation and ORM handling.</p>
+<p>An object holds a reference to another object by storing the
+<code class="docutils literal"><span class="pre">unique_id</span></code> of the other object in the table. An object can contain a
+list of references to other objects. These are stored in a separate link
+table, which allows a many-to-many relationship of objects. Where
+possible, access to the database is batched, where a query to each table
+is made only once for a given operation.</p>
+</div>
+<div class="section" id="provenance-model">
+<h1>Provenance Model<a class="headerlink" href="#provenance-model" title="Permalink to this headline">¶</a></h1>
+<p>A metatlas object has a <code class="docutils literal"><span class="pre">creation_time</span></code> and a <code class="docutils literal"><span class="pre">username</span></code>, which is
+the <code class="docutils literal"><span class="pre">$USER</span></code> of the person who created this version of the object. An
+object has three unique identifiers: the <code class="docutils literal"><span class="pre">unique_id</span></code>, the
+<code class="docutils literal"><span class="pre">prev_uid</span></code>, and the <code class="docutils literal"><span class="pre">head_id</span></code>. The &#8220;current object&#8221; is the one where
+the <code class="docutils literal"><span class="pre">unique_id</span></code> matches the <code class="docutils literal"><span class="pre">head_id</span></code>. When a user makes a change to
+their own object, the previous entry in the database is given a new
+<code class="docutils literal"><span class="pre">unique_id</span></code>, that id is stored as the <code class="docutils literal"><span class="pre">prev_uid</span></code> of the new entry.
+The same is done for any entries in the link table(s). The <code class="docutils literal"><span class="pre">head_id</span></code>
+is used for grouping a set of changes together. A new <code class="docutils literal"><span class="pre">head_id</span></code> is
+created on a <code class="docutils literal"><span class="pre">.clone()</span></code> of an object, or when saving changes to an
+object created by another user.</p>
+</div>
+<div class="section" id="visualization">
+<h1>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h1>
+<p>A metatlas object can be edited by calling <code class="docutils literal"><span class="pre">.edit()</span></code>, which creates an
+IPython widget interface to the object, allowing the user to edit the
+object. A group of metatlas objects can be edited by calling
+<code class="docutils literal"><span class="pre">edit_objects()</span></code>, which creates a QGrid widget, allowing the user to
+edit the objects in a table. The matplotlib notebook backend is used to
+create interactive visualizations of data.</p>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 - 2017, Metatlas contributors.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

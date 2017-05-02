@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>metatlas &#8212; Metatlas 0.7 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.3.6/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.7',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Information" href="../info.html" />
+    <link rel="prev" title="Examples" href="../examples.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+  
+  
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Metatlas</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.7</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">metatlas</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info.html">Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info.html#data-model">Data Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info.html#provenance-model">Provenance Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info.html#visualization">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin.html#nersc">NERSC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin.html#mysql">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin.html#cron">CRON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin.html#anaconda">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin.html#r-packages">R packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin.html#rdkit-pacakge-on-debian-ubuntu">RDKIT Pacakge on Debian/Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin.html#synchronizing-the-repo">Synchronizing the Repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin.html#id1">Administration</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#"><code class="docutils literal"><span class="pre">metatlas</span></code></a><ul>
+<li><a class="reference internal" href="#edit-objects">edit_objects</a></li>
+<li><a class="reference internal" href="#get-chromatogram">get_chromatogram</a></li>
+<li><a class="reference internal" href="#get-data">get_data</a></li>
+<li><a class="reference internal" href="#get-heatmap">get_heatmap</a></li>
+<li><a class="reference internal" href="#get-info">get_info</a></li>
+<li><a class="reference internal" href="#get-spectrogram">get_spectrogram</a></li>
+<li><a class="reference internal" href="#mzml-to-hdf">mzml_to_hdf</a></li>
+<li><a class="reference internal" href="#plot-chromatogram">plot_chromatogram</a></li>
+<li><a class="reference internal" href="#plot-heatmap">plot_heatmap</a></li>
+<li><a class="reference internal" href="#plot-spectrogram">plot_spectrogram</a></li>
+<li><a class="reference internal" href="#remove">remove</a></li>
+<li><a class="reference internal" href="#remove-objects">remove_objects</a></li>
+<li><a class="reference internal" href="#retrieve">retrieve</a></li>
+<li><a class="reference internal" href="#show-experiments">show_experiments</a></li>
+<li><a class="reference internal" href="#show-lcms-run">show_lcms_run</a></li>
+<li><a class="reference internal" href="#store">store</a></li>
+<li><a class="reference internal" href="#to-dataframe">to_dataframe</a></li>
+<li><a class="reference internal" href="#atlas"><code class="docutils literal"><span class="pre">Atlas</span></code></a></li>
+<li><a class="reference internal" href="#compound"><code class="docutils literal"><span class="pre">Compound</span></code></a></li>
+<li><a class="reference internal" href="#compoundidentification"><code class="docutils literal"><span class="pre">CompoundIdentification</span></code></a></li>
+<li><a class="reference internal" href="#fragmentationreference"><code class="docutils literal"><span class="pre">FragmentationReference</span></code></a></li>
+<li><a class="reference internal" href="#functionalset"><code class="docutils literal"><span class="pre">FunctionalSet</span></code></a></li>
+<li><a class="reference internal" href="#group"><code class="docutils literal"><span class="pre">Group</span></code></a></li>
+<li><a class="reference internal" href="#identificationgrade"><code class="docutils literal"><span class="pre">IdentificationGrade</span></code></a></li>
+<li><a class="reference internal" href="#lcmsrun"><code class="docutils literal"><span class="pre">LcmsRun</span></code></a></li>
+<li><a class="reference internal" href="#method"><code class="docutils literal"><span class="pre">Method</span></code></a></li>
+<li><a class="reference internal" href="#mzintensitypair"><code class="docutils literal"><span class="pre">MzIntensityPair</span></code></a></li>
+<li><a class="reference internal" href="#mzreference"><code class="docutils literal"><span class="pre">MzReference</span></code></a></li>
+<li><a class="reference internal" href="#reference"><code class="docutils literal"><span class="pre">Reference</span></code></a></li>
+<li><a class="reference internal" href="#rtreference"><code class="docutils literal"><span class="pre">RtReference</span></code></a></li>
+<li><a class="reference internal" href="#sample"><code class="docutils literal"><span class="pre">Sample</span></code></a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../examples.html" title="Previous Chapter: Examples"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Examples</span>
+    </a>
+  </li>
+  <li>
+    <a href="../info.html" title="Next Chapter: Information"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Information &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../../_sources/source/api/metatlas.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#"><code class="docutils literal"><span class="pre">metatlas</span></code></a><ul>
+<li><a class="reference internal" href="#edit-objects">edit_objects</a></li>
+<li><a class="reference internal" href="#get-chromatogram">get_chromatogram</a></li>
+<li><a class="reference internal" href="#get-data">get_data</a></li>
+<li><a class="reference internal" href="#get-heatmap">get_heatmap</a></li>
+<li><a class="reference internal" href="#get-info">get_info</a></li>
+<li><a class="reference internal" href="#get-spectrogram">get_spectrogram</a></li>
+<li><a class="reference internal" href="#mzml-to-hdf">mzml_to_hdf</a></li>
+<li><a class="reference internal" href="#plot-chromatogram">plot_chromatogram</a></li>
+<li><a class="reference internal" href="#plot-heatmap">plot_heatmap</a></li>
+<li><a class="reference internal" href="#plot-spectrogram">plot_spectrogram</a></li>
+<li><a class="reference internal" href="#remove">remove</a></li>
+<li><a class="reference internal" href="#remove-objects">remove_objects</a></li>
+<li><a class="reference internal" href="#retrieve">retrieve</a></li>
+<li><a class="reference internal" href="#show-experiments">show_experiments</a></li>
+<li><a class="reference internal" href="#show-lcms-run">show_lcms_run</a></li>
+<li><a class="reference internal" href="#store">store</a></li>
+<li><a class="reference internal" href="#to-dataframe">to_dataframe</a></li>
+<li><a class="reference internal" href="#atlas"><code class="docutils literal"><span class="pre">Atlas</span></code></a></li>
+<li><a class="reference internal" href="#compound"><code class="docutils literal"><span class="pre">Compound</span></code></a></li>
+<li><a class="reference internal" href="#compoundidentification"><code class="docutils literal"><span class="pre">CompoundIdentification</span></code></a></li>
+<li><a class="reference internal" href="#fragmentationreference"><code class="docutils literal"><span class="pre">FragmentationReference</span></code></a></li>
+<li><a class="reference internal" href="#functionalset"><code class="docutils literal"><span class="pre">FunctionalSet</span></code></a></li>
+<li><a class="reference internal" href="#group"><code class="docutils literal"><span class="pre">Group</span></code></a></li>
+<li><a class="reference internal" href="#identificationgrade"><code class="docutils literal"><span class="pre">IdentificationGrade</span></code></a></li>
+<li><a class="reference internal" href="#lcmsrun"><code class="docutils literal"><span class="pre">LcmsRun</span></code></a></li>
+<li><a class="reference internal" href="#method"><code class="docutils literal"><span class="pre">Method</span></code></a></li>
+<li><a class="reference internal" href="#mzintensitypair"><code class="docutils literal"><span class="pre">MzIntensityPair</span></code></a></li>
+<li><a class="reference internal" href="#mzreference"><code class="docutils literal"><span class="pre">MzReference</span></code></a></li>
+<li><a class="reference internal" href="#reference"><code class="docutils literal"><span class="pre">Reference</span></code></a></li>
+<li><a class="reference internal" href="#rtreference"><code class="docutils literal"><span class="pre">RtReference</span></code></a></li>
+<li><a class="reference internal" href="#sample"><code class="docutils literal"><span class="pre">Sample</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="module-metatlas">
+<span id="metatlas"></span><h1><a class="reference internal" href="#module-metatlas" title="metatlas"><code class="xref py py-mod docutils literal"><span class="pre">metatlas</span></code></a><a class="headerlink" href="#module-metatlas" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#metatlas.edit_objects" title="metatlas.edit_objects"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.edit_objects</span></code></a>(objects)</td>
+<td>Edit an object or set of Metatlas in a QGrid.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#metatlas.get_chromatogram" title="metatlas.get_chromatogram"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.get_chromatogram</span></code></a>(h5file,&nbsp;min_mz,&nbsp;max_mz)</td>
+<td>Get Chromatogram data - RT vs.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#metatlas.get_data" title="metatlas.get_data"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.get_data</span></code></a>(h5file,&nbsp;**kwargs)</td>
+<td>Get raw data from an h5file meeting given criteria.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#metatlas.get_heatmap" title="metatlas.get_heatmap"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.get_heatmap</span></code></a>(h5file,&nbsp;mz_bins,&nbsp;**kwargs)</td>
+<td>Get a HeatMap of RT vs MZ.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#metatlas.get_info" title="metatlas.get_info"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.get_info</span></code></a>(h5file)</td>
+<td>Get info about an LCMS HDF file</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#metatlas.get_spectrogram" title="metatlas.get_spectrogram"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.get_spectrogram</span></code></a>(h5file,&nbsp;min_rt,&nbsp;max_rt)</td>
+<td>Get cumulative I vs MZ in RT Range (spectrogram)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#metatlas.mzml_to_hdf" title="metatlas.mzml_to_hdf"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.mzml_to_hdf</span></code></a>(in_file_name[,&nbsp;...])</td>
+<td>Converts in_file (mzml) to binary and stores it in out_file</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#metatlas.plot_chromatogram" title="metatlas.plot_chromatogram"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.plot_chromatogram</span></code></a>(x,&nbsp;y[,&nbsp;title])</td>
+<td>Plots a Chromatogram.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#metatlas.plot_heatmap" title="metatlas.plot_heatmap"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.plot_heatmap</span></code></a>(arr,&nbsp;rt_bins,&nbsp;mz_bins)</td>
+<td>Plots the given numpy array in pyplot on a log scale (in the given format) and returns the image.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#metatlas.plot_spectrogram" title="metatlas.plot_spectrogram"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.plot_spectrogram</span></code></a>(x,&nbsp;y[,&nbsp;title])</td>
+<td>Plots a spectrogram.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#metatlas.remove" title="metatlas.remove"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.remove</span></code></a>(object_type,&nbsp;**kwargs)</td>
+<td>Remove objects from the Metatlas object database.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#metatlas.remove_objects" title="metatlas.remove_objects"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.remove_objects</span></code></a>(objects[,&nbsp;all_versions])</td>
+<td>Remove objects from the database.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#metatlas.retrieve" title="metatlas.retrieve"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.retrieve</span></code></a>(object_type,&nbsp;**kwargs)</td>
+<td>Get objects from the Metatlas object database.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#metatlas.show_experiments" title="metatlas.show_experiments"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.show_experiments</span></code></a>([username])</td>
+<td>Create a gui to browse the available experiments.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#metatlas.show_lcms_run" title="metatlas.show_lcms_run"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.show_lcms_run</span></code></a>(run[,&nbsp;min_mz,&nbsp;...])</td>
+<td>Interact with LCMS data - XIC linked to a Spectrogram plot.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#metatlas.store" title="metatlas.store"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.store</span></code></a>(objects,&nbsp;**kwargs)</td>
+<td>Store Metatlas objects in the database.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#metatlas.to_dataframe" title="metatlas.to_dataframe"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.to_dataframe</span></code></a>(objects)</td>
+<td>Convert a set of Metatlas objects into a dataframe.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#metatlas.Atlas" title="metatlas.Atlas"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.Atlas</span></code></a>(**kwargs)</td>
+<td>An atlas contains many compound_ids.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#metatlas.Compound" title="metatlas.Compound"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.Compound</span></code></a>(**kwargs)</td>
+<td>A Compound is a structurally distinct entry.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#metatlas.CompoundIdentification" title="metatlas.CompoundIdentification"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.CompoundIdentification</span></code></a>(**kwargs)</td>
+<td>A CompoundIdentification links multiple sources of evidence about a     compound&#8217;s identity to an Atlas.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#metatlas.FragmentationReference" title="metatlas.FragmentationReference"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.FragmentationReference</span></code></a>(**kwargs)</td>
+<td>FragmentationReference object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#metatlas.FunctionalSet" title="metatlas.FunctionalSet"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.FunctionalSet</span></code></a>(**kwargs)</td>
+<td>Functional sets of compounds.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#metatlas.Group" title="metatlas.Group"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.Group</span></code></a>(**kwargs)</td>
+<td>A Group can be a:</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#metatlas.IdentificationGrade" title="metatlas.IdentificationGrade"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.IdentificationGrade</span></code></a>(**kwargs)</td>
+<td>Each CompoundIdentification will have an identification_grade</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#metatlas.LcmsRun" title="metatlas.LcmsRun"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.LcmsRun</span></code></a>(**kwargs)</td>
+<td>An LCMS run is the reference to a file prepared with liquid     chromatography and mass spectrometry.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#metatlas.Method" title="metatlas.Method"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.Method</span></code></a>(**kwargs)</td>
+<td>For each LCMS run, a Method is a consistent description of     how the sample was prepared and LCMS data was collected.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#metatlas.MzIntensityPair" title="metatlas.MzIntensityPair"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.MzIntensityPair</span></code></a>(**kwargs)</td>
+<td>MzIntensityPair object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#metatlas.MzReference" title="metatlas.MzReference"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.MzReference</span></code></a>(**kwargs)</td>
+<td>Source of the assertion that a compound has a given m/z and     other properties directly tied to m/z.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#metatlas.Reference" title="metatlas.Reference"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.Reference</span></code></a>(**kwargs)</td>
+<td>Place holder for future reference sources.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#metatlas.RtReference" title="metatlas.RtReference"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.RtReference</span></code></a>(**kwargs)</td>
+<td>RtReference object.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#metatlas.Sample" title="metatlas.Sample"><code class="xref py py-obj docutils literal"><span class="pre">metatlas.Sample</span></code></a>(**kwargs)</td>
+<td>A Sample is the material that is processed with a Method.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="edit-objects">
+<h2>edit_objects<a class="headerlink" href="#edit-objects" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metatlas.edit_objects">
+<code class="descclassname">metatlas.</code><code class="descname">edit_objects</code><span class="sig-paren">(</span><em>objects</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/gui.html#edit_objects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.edit_objects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Edit an object or set of Metatlas in a QGrid.</p>
+<p>If more than one object is given, a grid will be shown, otherwise
+a single editor will be shown.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="get-chromatogram">
+<h2>get_chromatogram<a class="headerlink" href="#get-chromatogram" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metatlas.get_chromatogram">
+<code class="descclassname">metatlas.</code><code class="descname">get_chromatogram</code><span class="sig-paren">(</span><em>h5file</em>, <em>min_mz</em>, <em>max_mz</em>, <em>aggregator=&lt;function sum&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/h5_query.html#get_chromatogram"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.get_chromatogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Chromatogram data - RT vs. intensity aggregation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>h5file: string or open pytables file</strong></p>
+<blockquote>
+<div><p>The path to the h5file or open file handle.</p>
+</div></blockquote>
+<p><strong>min_mz</strong> : float</p>
+<blockquote>
+<div><p>Minimum m/z value.</p>
+</div></blockquote>
+<p><strong>max_mz</strong> : float</p>
+<blockquote>
+<div><p>Maximum m/z value.</p>
+</div></blockquote>
+<p><strong>ms_level</strong> : int</p>
+<blockquote>
+<div><p>MS Level.</p>
+</div></blockquote>
+<p><strong>polarity: int</strong></p>
+<blockquote>
+<div><p>Plus proton (1) or Minus proton (0).</p>
+</div></blockquote>
+<p><strong>aggregator: function</strong></p>
+<blockquote>
+<div><p>Function to aggregate the intensity data.  Defaults to np.sum,
+producing an XIC. For Base Peak Chromatogram, use np.max.</p>
+</div></blockquote>
+<p><strong>**kwargs</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Optional search modifiers.  (e.g. precursor_MZ=1,</dt>
+<dd><p class="first last">min_collision_energy=4)</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of arrays</p>
+<blockquote class="last">
+<div><p>(rt_vals, i_vals) arrays in the desired range.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="get-data">
+<h2>get_data<a class="headerlink" href="#get-data" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metatlas.get_data">
+<code class="descclassname">metatlas.</code><code class="descname">get_data</code><span class="sig-paren">(</span><em>h5file</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/h5_query.html#get_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get raw data from an h5file meeting given criteria.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>h5file: string or open pytables file</strong></p>
+<blockquote>
+<div><p>The path to the h5file or open file handle.</p>
+</div></blockquote>
+<p><strong>**kwargs</strong></p>
+<blockquote>
+<div><p>Optional search modifiers.  (e.g. min_r=0, max_mz=100, precursor_MZ=1).
+Use verbose=True for displaying query messages.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : dictionary</p>
+<blockquote class="last">
+<div><p>Dictionary with arrays for &#8216;i&#8217;, &#8216;mz&#8217;, and &#8216;rt&#8217; values meeting criteria.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="get-heatmap">
+<h2>get_heatmap<a class="headerlink" href="#get-heatmap" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metatlas.get_heatmap">
+<code class="descclassname">metatlas.</code><code class="descname">get_heatmap</code><span class="sig-paren">(</span><em>h5file</em>, <em>mz_bins</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/h5_query.html#get_heatmap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.get_heatmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a HeatMap of RT vs MZ.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>h5file: string or open pytables file</strong></p>
+<blockquote>
+<div><p>The path to the h5file or open file handle.</p>
+</div></blockquote>
+<p><strong>mz_steps</strong> : int or array-like</p>
+<blockquote>
+<div><p>Bins to use for the mz axis.</p>
+</div></blockquote>
+<p><strong>**kwargs</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Optional search modifiers.  (e.g. precursor_MZ=1,</dt>
+<dd><p class="first last">min_collision_energy=4)</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : dict</p>
+<blockquote class="last">
+<div><p>Dictionary containing: &#8216;arr&#8217;, &#8216;rt_bins&#8217;, &#8216;mz_bins&#8217;.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="get-info">
+<h2>get_info<a class="headerlink" href="#get-info" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metatlas.get_info">
+<code class="descclassname">metatlas.</code><code class="descname">get_info</code><span class="sig-paren">(</span><em>h5file</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/h5_query.html#get_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.get_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get info about an LCMS HDF file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>h5file: string or open pytables file</strong></p>
+<blockquote>
+<div><p>The path to the h5file or open file handle.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : dict</p>
+<blockquote class="last">
+<div><p>Number of rows for all of the tables in the file.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="get-spectrogram">
+<h2>get_spectrogram<a class="headerlink" href="#get-spectrogram" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metatlas.get_spectrogram">
+<code class="descclassname">metatlas.</code><code class="descname">get_spectrogram</code><span class="sig-paren">(</span><em>h5file</em>, <em>min_rt</em>, <em>max_rt</em>, <em>bins=2000</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/h5_query.html#get_spectrogram"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.get_spectrogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get cumulative I vs MZ in RT Range (spectrogram)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>h5file</strong> : table file handle</p>
+<blockquote>
+<div><p>Handle to an open tables file.</p>
+</div></blockquote>
+<p><strong>min_rt</strong> : float</p>
+<blockquote>
+<div><p>Minimum retention time.</p>
+</div></blockquote>
+<p><strong>max_rt</strong> : float</p>
+<blockquote>
+<div><p>Maximum retention time.</p>
+</div></blockquote>
+<p><strong>bins</strong> : int or array-like</p>
+<blockquote>
+<div><p>Desired bins for the histogram.</p>
+</div></blockquote>
+<p><strong>**kwargs</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Optional search modifiers.  (e.g. precursor_MZ=1,</dt>
+<dd><p class="first last">min_collision_energy=4)</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : tuple of arrays</p>
+<blockquote class="last">
+<div><p>(mz_vals, i_vals) arrays in the desired range.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="mzml-to-hdf">
+<h2>mzml_to_hdf<a class="headerlink" href="#mzml-to-hdf" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metatlas.mzml_to_hdf">
+<code class="descclassname">metatlas.</code><code class="descname">mzml_to_hdf</code><span class="sig-paren">(</span><em>in_file_name</em>, <em>out_file_name=None</em>, <em>debug=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/mzml_loader.html#mzml_to_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.mzml_to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts in_file (mzml) to binary and stores it in out_file</p>
+</dd></dl>
+
+</div>
+<div class="section" id="plot-chromatogram">
+<h2>plot_chromatogram<a class="headerlink" href="#plot-chromatogram" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metatlas.plot_chromatogram">
+<code class="descclassname">metatlas.</code><code class="descname">plot_chromatogram</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>title='XIC for Sample'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/plotting.html#plot_chromatogram"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.plot_chromatogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots a Chromatogram.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>x</strong> : array-like</p>
+<blockquote>
+<div><p>X values.</p>
+</div></blockquote>
+<p><strong>y</strong> : array-like</p>
+<blockquote>
+<div><p>Y values.</p>
+</div></blockquote>
+<p><strong>title</strong> : str, optional</p>
+<blockquote>
+<div><p>Title of plot.</p>
+</div></blockquote>
+<p><strong>**kwargs</strong></p>
+<blockquote class="last">
+<div><p>Keyword arguments for <code class="docutils literal"><span class="pre">plt.plot</span></code>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="plot-heatmap">
+<h2>plot_heatmap<a class="headerlink" href="#plot-heatmap" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metatlas.plot_heatmap">
+<code class="descclassname">metatlas.</code><code class="descname">plot_heatmap</code><span class="sig-paren">(</span><em>arr</em>, <em>rt_bins</em>, <em>mz_bins</em>, <em>title='HeatMap for Sample'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/plotting.html#plot_heatmap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.plot_heatmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots the given numpy array in pyplot on a log scale (in the given format)
+and returns the image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>arr</strong> : array</p>
+<blockquote>
+<div><p>Array returned by get_HeatMapRTMZ (typically a slice).</p>
+</div></blockquote>
+<p><strong>rt_bins</strong> : array-like</p>
+<blockquote>
+<div><p>Selected bins on the rt axis (typically a slice).</p>
+</div></blockquote>
+<p><strong>mz_bins</strong> : array-like</p>
+<blockquote>
+<div><p>Selected bins on the mz axis (typically a slice).</p>
+</div></blockquote>
+<p><strong>title</strong> : str, optional</p>
+<blockquote>
+<div><p>Title of plot.</p>
+</div></blockquote>
+<p><strong>**kwargs</strong></p>
+<blockquote class="last">
+<div><p>Keyword arguments for <code class="docutils literal"><span class="pre">plt.imshow</span></code>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="plot-spectrogram">
+<h2>plot_spectrogram<a class="headerlink" href="#plot-spectrogram" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metatlas.plot_spectrogram">
+<code class="descclassname">metatlas.</code><code class="descname">plot_spectrogram</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>title='Spectrogram for Sample'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/plotting.html#plot_spectrogram"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.plot_spectrogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots a spectrogram.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>x</strong> : array-like</p>
+<blockquote>
+<div><p>X values.</p>
+</div></blockquote>
+<p><strong>y</strong> : array-like</p>
+<blockquote>
+<div><p>Y values.</p>
+</div></blockquote>
+<p><strong>title</strong> : str, optional</p>
+<blockquote>
+<div><p>Title of plot.</p>
+</div></blockquote>
+<p><strong>**kwargs</strong></p>
+<blockquote class="last">
+<div><p>Keyword arguments for <code class="docutils literal"><span class="pre">plt.plot</span></code>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="remove">
+<h2>remove<a class="headerlink" href="#remove" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metatlas.remove">
+<code class="descclassname">metatlas.</code><code class="descname">remove</code><span class="sig-paren">(</span><em>object_type</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/metatlas_objects.html#remove"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove objects from the Metatlas object database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>object_type: string</strong></p>
+<blockquote>
+<div><p>The type of object to remove (i.e. &#8220;Groups&#8221;).</p>
+</div></blockquote>
+<p><strong>**kwargs</strong></p>
+<blockquote class="last">
+<div><p>Specific search queries (i.e. name=&#8221;Sargasso&#8221;).
+Use &#8216;%&#8217; for wildcard patterns (i.e. description=&#8217;Hello%&#8217;).
+If you want to match a &#8216;%&#8217; character, use &#8216;%%&#8217;.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="remove-objects">
+<h2>remove_objects<a class="headerlink" href="#remove-objects" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metatlas.remove_objects">
+<code class="descclassname">metatlas.</code><code class="descname">remove_objects</code><span class="sig-paren">(</span><em>objects</em>, <em>all_versions=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/metatlas_objects.html#remove_objects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.remove_objects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove objects from the database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>all_versions: boolean, optional</strong></p>
+<blockquote class="last">
+<div><p>If True, remove all versions of the object sharing the current
+head_id.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="retrieve">
+<h2>retrieve<a class="headerlink" href="#retrieve" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metatlas.retrieve">
+<code class="descclassname">metatlas.</code><code class="descname">retrieve</code><span class="sig-paren">(</span><em>object_type</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/metatlas_objects.html#retrieve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.retrieve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get objects from the Metatlas object database.</p>
+<p>This will automatically select only objects created by the current
+user unless <cite>username</cite> is provided. Use <cite>username=&#8217;*&#8217;</cite> to search
+against all users.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>object_type: string</strong></p>
+<blockquote>
+<div><p>The type of object to search for (i.e. &#8220;Groups&#8221;).</p>
+</div></blockquote>
+<p><strong>**kwargs</strong></p>
+<blockquote>
+<div><p>Specific search queries (i.e. name=&#8221;Sargasso&#8221;).
+Use &#8216;%&#8217; for wildcard patterns (i.e. description=&#8217;Hello%&#8217;).
+If you want to match a &#8216;%&#8217; character, use &#8216;%%&#8217;.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">objects: list</p>
+<blockquote class="last">
+<div><p>List of Metatlas Objects meeting the criteria.  Will return the
+latest version of each object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="show-experiments">
+<h2>show_experiments<a class="headerlink" href="#show-experiments" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metatlas.show_experiments">
+<code class="descclassname">metatlas.</code><code class="descname">show_experiments</code><span class="sig-paren">(</span><em>username=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/gui.html#show_experiments"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.show_experiments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a gui to browse the available experiments.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="show-lcms-run">
+<h2>show_lcms_run<a class="headerlink" href="#show-lcms-run" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metatlas.show_lcms_run">
+<code class="descclassname">metatlas.</code><code class="descname">show_lcms_run</code><span class="sig-paren">(</span><em>run</em>, <em>min_mz=None</em>, <em>max_mz=None</em>, <em>polarity=None</em>, <em>ms_level=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/gui.html#show_lcms_run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.show_lcms_run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interact with LCMS data - XIC linked to a Spectrogram plot.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>run: LcmsRun.</strong></p>
+<blockquote>
+<div><p>The object to interact with.</p>
+</div></blockquote>
+<p><strong>min_mz: float</strong></p>
+<blockquote>
+<div><p>Minimum m/z (defaults to file min)</p>
+</div></blockquote>
+<p><strong>max_mz: float</strong></p>
+<blockquote>
+<div><p>Maximum m/z (defaults to file max)</p>
+</div></blockquote>
+<p><strong>polarity: {0, 1}</strong></p>
+<blockquote>
+<div><p>Polarity (defaults to neg. if present in file, else pos.)</p>
+</div></blockquote>
+<p><strong>ms_level: {0, 1}</strong></p>
+<blockquote class="last">
+<div><p>The ms level.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="store">
+<h2>store<a class="headerlink" href="#store" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metatlas.store">
+<code class="descclassname">metatlas.</code><code class="descname">store</code><span class="sig-paren">(</span><em>objects</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/metatlas_objects.html#store"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store Metatlas objects in the database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>objects: Metatlas object or list of Metatlas Objects</strong></p>
+<blockquote class="last">
+<div><p>Object(s) to store in the database.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="to-dataframe">
+<h2>to_dataframe<a class="headerlink" href="#to-dataframe" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metatlas.to_dataframe">
+<code class="descclassname">metatlas.</code><code class="descname">to_dataframe</code><span class="sig-paren">(</span><em>objects</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/metatlas_objects.html#to_dataframe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.to_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a set of Metatlas objects into a dataframe.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="atlas">
+<h2><a class="reference internal" href="#metatlas.Atlas" title="metatlas.Atlas"><code class="xref py py-class docutils literal"><span class="pre">Atlas</span></code></a><a class="headerlink" href="#atlas" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="metatlas.Atlas">
+<em class="property">class </em><code class="descclassname">metatlas.</code><code class="descname">Atlas</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/metatlas_objects.html#Atlas"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.Atlas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">metatlas.metatlas_objects.MetatlasObject</span></code></p>
+<p>An atlas contains many compound_ids.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>compound_identifications: metlist</strong></p>
+<blockquote>
+<div><p>List of Compound Identification objects.</p>
+</div></blockquote>
+<p><strong>creation_time: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at object creation (read only).</p>
+</div></blockquote>
+<p><strong>description: metunicode</strong></p>
+<blockquote>
+<div><p>Description of the object.</p>
+</div></blockquote>
+<p><strong>head_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of most recent version of this object (read only).</p>
+</div></blockquote>
+<p><strong>last_modified: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at last object update (read only).</p>
+</div></blockquote>
+<p><strong>name: metunicode</strong></p>
+<blockquote>
+<div><p>Name of the object.</p>
+</div></blockquote>
+<p><strong>prev_uid: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of previous version (read only).</p>
+</div></blockquote>
+<p><strong>unique_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique identifier for the object (read only).</p>
+</div></blockquote>
+<p><strong>username: metunicode</strong></p>
+<blockquote class="last">
+<div><p>Username who created the object (read only).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Set the default attributes.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="compound">
+<h2><a class="reference internal" href="#metatlas.Compound" title="metatlas.Compound"><code class="xref py py-class docutils literal"><span class="pre">Compound</span></code></a><a class="headerlink" href="#compound" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="metatlas.Compound">
+<em class="property">class </em><code class="descclassname">metatlas.</code><code class="descname">Compound</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/metatlas_objects.html#Compound"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.Compound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">metatlas.metatlas_objects.MetatlasObject</span></code></p>
+<dl class="docutils">
+<dt>A Compound is a structurally distinct entry.  The majority of MetAtlas compounds are from a merge</dt>
+<dd>of WikiData, miBIG, HMDB, ChEBI, LipidMaps, MetaCyc, GNPS, ENZO-Library, MSMLS-Library.  Compounds that 
+had an unparseable structural identifier by RDKIT June, 2016, were ignored.  Distinct molecules are found
+by inchi-key of neutralized and de-salted molecules.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>chebi_id: metunicode</strong></p>
+<blockquote>
+<div><p>chebi_id value.</p>
+</div></blockquote>
+<p><strong>chebi_url: metunicode</strong></p>
+<blockquote>
+<div><p>Reference database table url.</p>
+</div></blockquote>
+<p><strong>creation_time: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at object creation (read only).</p>
+</div></blockquote>
+<p><strong>description: metunicode</strong></p>
+<blockquote>
+<div><p>Description of the object.</p>
+</div></blockquote>
+<p><strong>formula: metunicode</strong></p>
+<blockquote>
+<div><p>formula value.</p>
+</div></blockquote>
+<p><strong>head_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of most recent version of this object (read only).</p>
+</div></blockquote>
+<p><strong>hmdb_id: metunicode</strong></p>
+<blockquote>
+<div><p>hmdb_id value.</p>
+</div></blockquote>
+<p><strong>hmdb_url: metunicode</strong></p>
+<blockquote>
+<div><p>Reference database table url.</p>
+</div></blockquote>
+<p><strong>img_abc_id: metunicode</strong></p>
+<blockquote>
+<div><p>img_abc_id value.</p>
+</div></blockquote>
+<p><strong>inchi: metunicode</strong></p>
+<blockquote>
+<div><p>inchi value.</p>
+</div></blockquote>
+<p><strong>inchi_key: metunicode</strong></p>
+<blockquote>
+<div><p>inchi_key value.</p>
+</div></blockquote>
+<p><strong>iupac_name: metunicode</strong></p>
+<blockquote>
+<div><p>IUPAC International Chemical Identifier, optional.</p>
+</div></blockquote>
+<p><strong>kegg_id: metunicode</strong></p>
+<blockquote>
+<div><p>kegg_id value.</p>
+</div></blockquote>
+<p><strong>kegg_url: metunicode</strong></p>
+<blockquote>
+<div><p>Reference database table url.</p>
+</div></blockquote>
+<p><strong>last_modified: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at last object update (read only).</p>
+</div></blockquote>
+<p><strong>lipidmaps_id: metunicode</strong></p>
+<blockquote>
+<div><p>lipidmaps_id value.</p>
+</div></blockquote>
+<p><strong>lipidmaps_url: metunicode</strong></p>
+<blockquote>
+<div><p>Reference database table url.</p>
+</div></blockquote>
+<p><strong>metacyc_id: metunicode</strong></p>
+<blockquote>
+<div><p>metacyc_id value.</p>
+</div></blockquote>
+<p><strong>mono_isotopic_molecular_weight: metfloat</strong></p>
+<blockquote>
+<div><p>mono_isotopic_molecular_weight value.</p>
+</div></blockquote>
+<p><strong>name: metunicode</strong></p>
+<blockquote>
+<div><p>Name of the object.</p>
+</div></blockquote>
+<p><strong>neutralized_2d_inchi: metunicode</strong></p>
+<blockquote>
+<div><p>neutralized_2d_inchi value.</p>
+</div></blockquote>
+<p><strong>neutralized_2d_inchi_key: metunicode</strong></p>
+<blockquote>
+<div><p>neutralized_2d_inchi_key value.</p>
+</div></blockquote>
+<p><strong>neutralized_inchi: metunicode</strong></p>
+<blockquote>
+<div><p>neutralized_inchi value.</p>
+</div></blockquote>
+<p><strong>neutralized_inchi_key: metunicode</strong></p>
+<blockquote>
+<div><p>neutralized_inchi_key value.</p>
+</div></blockquote>
+<p><strong>num_free_radicals: metint</strong></p>
+<blockquote>
+<div><p>num_free_radicals value.</p>
+</div></blockquote>
+<p><strong>number_components: metint</strong></p>
+<blockquote>
+<div><p>Must be one or greater.</p>
+</div></blockquote>
+<p><strong>permanent_charge: metint</strong></p>
+<blockquote>
+<div><p>permanent_charge value.</p>
+</div></blockquote>
+<p><strong>prev_uid: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of previous version (read only).</p>
+</div></blockquote>
+<p><strong>pubchem_compound_id: metunicode</strong></p>
+<blockquote>
+<div><p>pubchem_compound_id value.</p>
+</div></blockquote>
+<p><strong>pubchem_url: metunicode</strong></p>
+<blockquote>
+<div><p>Reference database table url.</p>
+</div></blockquote>
+<p><strong>source: metunicode</strong></p>
+<blockquote>
+<div><p>source value.</p>
+</div></blockquote>
+<p><strong>synonyms: metunicode</strong></p>
+<blockquote>
+<div><p>synonyms value.</p>
+</div></blockquote>
+<p><strong>unique_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique identifier for the object (read only).</p>
+</div></blockquote>
+<p><strong>username: metunicode</strong></p>
+<blockquote>
+<div><p>Username who created the object (read only).</p>
+</div></blockquote>
+<p><strong>wikipedia_url: metunicode</strong></p>
+<blockquote class="last">
+<div><p>Reference database table url.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Set the default attributes.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="compoundidentification">
+<h2><a class="reference internal" href="#metatlas.CompoundIdentification" title="metatlas.CompoundIdentification"><code class="xref py py-class docutils literal"><span class="pre">CompoundIdentification</span></code></a><a class="headerlink" href="#compoundidentification" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="metatlas.CompoundIdentification">
+<em class="property">class </em><code class="descclassname">metatlas.</code><code class="descname">CompoundIdentification</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/metatlas_objects.html#CompoundIdentification"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.CompoundIdentification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">metatlas.metatlas_objects.MetatlasObject</span></code></p>
+<dl class="docutils">
+<dt>A CompoundIdentification links multiple sources of evidence about a</dt>
+<dd>compound&#8217;s identity to an Atlas.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>compound: metlist</strong></p>
+<blockquote>
+<div><p>compound value.</p>
+</div></blockquote>
+<p><strong>creation_time: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at object creation (read only).</p>
+</div></blockquote>
+<p><strong>description: metunicode</strong></p>
+<blockquote>
+<div><p>Description of the object.</p>
+</div></blockquote>
+<p><strong>frag_references: metlist</strong></p>
+<blockquote>
+<div><p>frag_references value.</p>
+</div></blockquote>
+<p><strong>head_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of most recent version of this object (read only).</p>
+</div></blockquote>
+<p><strong>identification_grade: _idgradetrait</strong></p>
+<blockquote>
+<div><p>Identification grade of the id (can be specified by a letter A-H.</p>
+</div></blockquote>
+<p><strong>intensity_references: metlist</strong></p>
+<blockquote>
+<div><p>intensity_references value.</p>
+</div></blockquote>
+<p><strong>last_modified: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at last object update (read only).</p>
+</div></blockquote>
+<p><strong>mz_references: metlist</strong></p>
+<blockquote>
+<div><p>mz_references value.</p>
+</div></blockquote>
+<p><strong>name: metunicode</strong></p>
+<blockquote>
+<div><p>Name of the object.</p>
+</div></blockquote>
+<p><strong>prev_uid: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of previous version (read only).</p>
+</div></blockquote>
+<p><strong>rt_references: metlist</strong></p>
+<blockquote>
+<div><p>rt_references value.</p>
+</div></blockquote>
+<p><strong>unique_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique identifier for the object (read only).</p>
+</div></blockquote>
+<p><strong>username: metunicode</strong></p>
+<blockquote class="last">
+<div><p>Username who created the object (read only).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Set the default attributes.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="fragmentationreference">
+<h2><a class="reference internal" href="#metatlas.FragmentationReference" title="metatlas.FragmentationReference"><code class="xref py py-class docutils literal"><span class="pre">FragmentationReference</span></code></a><a class="headerlink" href="#fragmentationreference" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="metatlas.FragmentationReference">
+<em class="property">class </em><code class="descclassname">metatlas.</code><code class="descname">FragmentationReference</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/metatlas_objects.html#FragmentationReference"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.FragmentationReference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">metatlas.metatlas_objects.Reference</span></code></p>
+<p>FragmentationReference object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>collision_energy: metfloat</strong></p>
+<blockquote>
+<div><p>collision_energy value.</p>
+</div></blockquote>
+<p><strong>creation_time: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at object creation (read only).</p>
+</div></blockquote>
+<p><strong>description: metunicode</strong></p>
+<blockquote>
+<div><p>Description of the object.</p>
+</div></blockquote>
+<p><strong>enabled: metbool</strong></p>
+<blockquote>
+<div><p>enabled value.</p>
+</div></blockquote>
+<p><strong>head_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of most recent version of this object (read only).</p>
+</div></blockquote>
+<p><strong>last_modified: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at last object update (read only).</p>
+</div></blockquote>
+<p><strong>lcms_run: metinstance</strong></p>
+<blockquote>
+<div><p>lcms_run value.</p>
+</div></blockquote>
+<p><strong>mz_intensities: metlist</strong></p>
+<blockquote>
+<div><p>list of [mz, intesity] tuples that describe  a fragmentation spectra.</p>
+</div></blockquote>
+<p><strong>name: metunicode</strong></p>
+<blockquote>
+<div><p>Name of the object.</p>
+</div></blockquote>
+<p><strong>polarity: metenum</strong></p>
+<blockquote>
+<div><p>polarity value.</p>
+</div></blockquote>
+<p><strong>precursor_mz: metfloat</strong></p>
+<blockquote>
+<div><p>precursor_mz value.</p>
+</div></blockquote>
+<p><strong>prev_uid: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of previous version (read only).</p>
+</div></blockquote>
+<p><strong>ref_type: metunicode</strong></p>
+<blockquote>
+<div><p>The type of reference.</p>
+</div></blockquote>
+<p><strong>technique: metenum</strong></p>
+<blockquote>
+<div><p>technique value.</p>
+</div></blockquote>
+<p><strong>unique_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique identifier for the object (read only).</p>
+</div></blockquote>
+<p><strong>username: metunicode</strong></p>
+<blockquote class="last">
+<div><p>Username who created the object (read only).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Set the default attributes.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="functionalset">
+<h2><a class="reference internal" href="#metatlas.FunctionalSet" title="metatlas.FunctionalSet"><code class="xref py py-class docutils literal"><span class="pre">FunctionalSet</span></code></a><a class="headerlink" href="#functionalset" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="metatlas.FunctionalSet">
+<em class="property">class </em><code class="descclassname">metatlas.</code><code class="descname">FunctionalSet</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/metatlas_objects.html#FunctionalSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.FunctionalSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">metatlas.metatlas_objects.MetatlasObject</span></code></p>
+<dl class="docutils">
+<dt>Functional sets of compounds.  For example set called &#8220;hexose&#8221; would</dt>
+<dd>include &#8220;glucose, galactose, etc&#8221;.  Functional sets can be sets-of-sets.
+&#8220;Sugars&#8221; would be a set that contains &#8220;Hexoses&#8221;.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>creation_time: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at object creation (read only).</p>
+</div></blockquote>
+<p><strong>description: metunicode</strong></p>
+<blockquote>
+<div><p>Description of the object.</p>
+</div></blockquote>
+<p><strong>enabled: metbool</strong></p>
+<blockquote>
+<div><p>enabled value.</p>
+</div></blockquote>
+<p><strong>head_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of most recent version of this object (read only).</p>
+</div></blockquote>
+<p><strong>last_modified: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at last object update (read only).</p>
+</div></blockquote>
+<p><strong>members: metlist</strong></p>
+<blockquote>
+<div><p>members value.</p>
+</div></blockquote>
+<p><strong>name: metunicode</strong></p>
+<blockquote>
+<div><p>Name of the object.</p>
+</div></blockquote>
+<p><strong>prev_uid: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of previous version (read only).</p>
+</div></blockquote>
+<p><strong>unique_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique identifier for the object (read only).</p>
+</div></blockquote>
+<p><strong>username: metunicode</strong></p>
+<blockquote class="last">
+<div><p>Username who created the object (read only).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Set the default attributes.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="group">
+<h2><a class="reference internal" href="#metatlas.Group" title="metatlas.Group"><code class="xref py py-class docutils literal"><span class="pre">Group</span></code></a><a class="headerlink" href="#group" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="metatlas.Group">
+<em class="property">class </em><code class="descclassname">metatlas.</code><code class="descname">Group</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/metatlas_objects.html#Group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.Group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">metatlas.metatlas_objects.MetatlasObject</span></code></p>
+<dl class="docutils">
+<dt>A Group can be a:</dt>
+<dd>file,
+group of files, or
+group of groups</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>creation_time: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at object creation (read only).</p>
+</div></blockquote>
+<p><strong>description: metunicode</strong></p>
+<blockquote>
+<div><p>Description of the object.</p>
+</div></blockquote>
+<p><strong>head_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of most recent version of this object (read only).</p>
+</div></blockquote>
+<p><strong>items: metlist</strong></p>
+<blockquote>
+<div><p>Can contain other groups or LCMS Runs.</p>
+</div></blockquote>
+<p><strong>last_modified: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at last object update (read only).</p>
+</div></blockquote>
+<p><strong>name: metunicode</strong></p>
+<blockquote>
+<div><p>Name of the object.</p>
+</div></blockquote>
+<p><strong>prev_uid: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of previous version (read only).</p>
+</div></blockquote>
+<p><strong>unique_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique identifier for the object (read only).</p>
+</div></blockquote>
+<p><strong>username: metunicode</strong></p>
+<blockquote class="last">
+<div><p>Username who created the object (read only).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Set the default attributes.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="identificationgrade">
+<h2><a class="reference internal" href="#metatlas.IdentificationGrade" title="metatlas.IdentificationGrade"><code class="xref py py-class docutils literal"><span class="pre">IdentificationGrade</span></code></a><a class="headerlink" href="#identificationgrade" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="metatlas.IdentificationGrade">
+<em class="property">class </em><code class="descclassname">metatlas.</code><code class="descname">IdentificationGrade</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/metatlas_objects.html#IdentificationGrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.IdentificationGrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">metatlas.metatlas_objects.MetatlasObject</span></code></p>
+<blockquote>
+<div>Each CompoundIdentification will have an identification_grade
+Identification Grades:
+1) High intensity and verifiable by MSMS and RT
+authentic standard
+2) Verifiable by MSMS from database or
+publication
+3) Has fragment ion or neutral loss characteristic
+of a class of compounds
+4) definitive chemical formula and adduct
+5) Significant changing metabolite with MSMS
+suggestion from MIDAS
+6) Significant changing metabolite
+7) Not Significant changing metabolite with
+MSMS suggestion from MIDAS
+8) Not Significant changing metabolite</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>creation_time: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at object creation (read only).</p>
+</div></blockquote>
+<p><strong>description: metunicode</strong></p>
+<blockquote>
+<div><p>Description of the object.</p>
+</div></blockquote>
+<p><strong>head_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of most recent version of this object (read only).</p>
+</div></blockquote>
+<p><strong>last_modified: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at last object update (read only).</p>
+</div></blockquote>
+<p><strong>name: metunicode</strong></p>
+<blockquote>
+<div><p>Name of the object.</p>
+</div></blockquote>
+<p><strong>prev_uid: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of previous version (read only).</p>
+</div></blockquote>
+<p><strong>unique_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique identifier for the object (read only).</p>
+</div></blockquote>
+<p><strong>username: metunicode</strong></p>
+<blockquote class="last">
+<div><p>Username who created the object (read only).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Set the default attributes.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="lcmsrun">
+<h2><a class="reference internal" href="#metatlas.LcmsRun" title="metatlas.LcmsRun"><code class="xref py py-class docutils literal"><span class="pre">LcmsRun</span></code></a><a class="headerlink" href="#lcmsrun" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="metatlas.LcmsRun">
+<em class="property">class </em><code class="descclassname">metatlas.</code><code class="descname">LcmsRun</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/metatlas_objects.html#LcmsRun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.LcmsRun" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">metatlas.metatlas_objects.MetatlasObject</span></code></p>
+<dl class="docutils">
+<dt>An LCMS run is the reference to a file prepared with liquid</dt>
+<dd><p class="first">chromatography and mass spectrometry.</p>
+<p>The msconvert program is used to convert raw data (centroided is prefered)
+to mzML.</p>
+<p class="last">Note: These objects are not intented to be created directly, but by putting
+the files in /project/projectdirs/metatlas/raw_data/&lt;username&gt; or by
+running <cite>load_lcms_files()</cite>.</p>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>acquisition_time: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp when data was acquired creation.</p>
+</div></blockquote>
+<p><strong>creation_time: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at object creation (read only).</p>
+</div></blockquote>
+<p><strong>description: metunicode</strong></p>
+<blockquote>
+<div><p>Description of the object.</p>
+</div></blockquote>
+<p><strong>experiment: metunicode</strong></p>
+<blockquote>
+<div><p>The name of the experiment.</p>
+</div></blockquote>
+<p><strong>hdf5_file: metunicode</strong></p>
+<blockquote>
+<div><p>Path to the HDF5 file at NERSC.</p>
+</div></blockquote>
+<p><strong>head_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of most recent version of this object (read only).</p>
+</div></blockquote>
+<p><strong>injection_volume: metfloat</strong></p>
+<blockquote>
+<div><p>injection_volume value.</p>
+</div></blockquote>
+<p><strong>injection_volume_units: metenum</strong></p>
+<blockquote>
+<div><p>injection_volume_units value.</p>
+</div></blockquote>
+<p><strong>last_modified: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at last object update (read only).</p>
+</div></blockquote>
+<p><strong>method: metinstance</strong></p>
+<blockquote>
+<div><p>method value.</p>
+</div></blockquote>
+<p><strong>mzml_file: metunicode</strong></p>
+<blockquote>
+<div><p>Path to the MZML file at NERSC.</p>
+</div></blockquote>
+<p><strong>name: metunicode</strong></p>
+<blockquote>
+<div><p>Name of the object.</p>
+</div></blockquote>
+<p><strong>pass_qc: metbool</strong></p>
+<blockquote>
+<div><p>True/False for if the LCMS Run has passed a quality control assessment.</p>
+</div></blockquote>
+<p><strong>prev_uid: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of previous version (read only).</p>
+</div></blockquote>
+<p><strong>sample: metinstance</strong></p>
+<blockquote>
+<div><p>sample value.</p>
+</div></blockquote>
+<p><strong>unique_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique identifier for the object (read only).</p>
+</div></blockquote>
+<p><strong>username: metunicode</strong></p>
+<blockquote class="last">
+<div><p>Username who created the object (read only).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Set the default attributes.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="method">
+<h2><a class="reference internal" href="#metatlas.Method" title="metatlas.Method"><code class="xref py py-class docutils literal"><span class="pre">Method</span></code></a><a class="headerlink" href="#method" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="metatlas.Method">
+<em class="property">class </em><code class="descclassname">metatlas.</code><code class="descname">Method</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/metatlas_objects.html#Method"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.Method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">metatlas.metatlas_objects.MetatlasObject</span></code></p>
+<blockquote>
+<div>For each LCMS run, a Method is a consistent description of
+how the sample was prepared and LCMS data was collected.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>column_model: metunicode</strong></p>
+<blockquote>
+<div><p>Brand and catalog number of the column.</p>
+</div></blockquote>
+<p><strong>column_type: metunicode</strong></p>
+<blockquote>
+<div><p>Class of column used.</p>
+</div></blockquote>
+<p><strong>creation_time: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at object creation (read only).</p>
+</div></blockquote>
+<p><strong>description: metunicode</strong></p>
+<blockquote>
+<div><p>Description of the object.</p>
+</div></blockquote>
+<p><strong>extraction_solvent: metunicode</strong></p>
+<blockquote>
+<div><p>Solvent or solvent mixture used to extract metabolites.</p>
+</div></blockquote>
+<p><strong>head_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of most recent version of this object (read only).</p>
+</div></blockquote>
+<p><strong>instrument: metunicode</strong></p>
+<blockquote>
+<div><p>Brand and catalog number for the mass spectrometer.</p>
+</div></blockquote>
+<p><strong>ion_source: metunicode</strong></p>
+<blockquote>
+<div><p>Method for ionization.</p>
+</div></blockquote>
+<p><strong>last_modified: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at last object update (read only).</p>
+</div></blockquote>
+<p><strong>mass_analyzer: metunicode</strong></p>
+<blockquote>
+<div><p>Method for detection.</p>
+</div></blockquote>
+<p><strong>mobile_phase_a: metunicode</strong></p>
+<blockquote>
+<div><p>Solvent or solvent mixture.</p>
+</div></blockquote>
+<p><strong>mobile_phase_b: metunicode</strong></p>
+<blockquote>
+<div><p>Solvent or solvent mixture.</p>
+</div></blockquote>
+<p><strong>name: metunicode</strong></p>
+<blockquote>
+<div><p>Name of the object.</p>
+</div></blockquote>
+<p><strong>polarity: metenum</strong></p>
+<blockquote>
+<div><p>polarity for the run.</p>
+</div></blockquote>
+<p><strong>prev_uid: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of previous version (read only).</p>
+</div></blockquote>
+<p><strong>protocol_ref: metunicode</strong></p>
+<blockquote>
+<div><p>Reference to a published protocol: identical to the protocol used.</p>
+</div></blockquote>
+<p><strong>quenching_method: metunicode</strong></p>
+<blockquote>
+<div><p>Description of the method used to stop metabolism.</p>
+</div></blockquote>
+<p><strong>reconstitution_method: metunicode</strong></p>
+<blockquote>
+<div><p>Solvent or solvent mixture the extract is reconstituted in prior to injection for an LCMS Run.</p>
+</div></blockquote>
+<p><strong>scan_mz_range: metunicode</strong></p>
+<blockquote>
+<div><p>Minimum and maximum mz recorded for a run.</p>
+</div></blockquote>
+<p><strong>temporal_parameters: metunicode</strong></p>
+<blockquote>
+<div><p>temporal_parameters value.</p>
+</div></blockquote>
+<p><strong>unique_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique identifier for the object (read only).</p>
+</div></blockquote>
+<p><strong>username: metunicode</strong></p>
+<blockquote class="last">
+<div><p>Username who created the object (read only).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Set the default attributes.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="mzintensitypair">
+<h2><a class="reference internal" href="#metatlas.MzIntensityPair" title="metatlas.MzIntensityPair"><code class="xref py py-class docutils literal"><span class="pre">MzIntensityPair</span></code></a><a class="headerlink" href="#mzintensitypair" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="metatlas.MzIntensityPair">
+<em class="property">class </em><code class="descclassname">metatlas.</code><code class="descname">MzIntensityPair</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/metatlas_objects.html#MzIntensityPair"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.MzIntensityPair" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">metatlas.metatlas_objects.MetatlasObject</span></code></p>
+<p>MzIntensityPair object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>creation_time: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at object creation (read only).</p>
+</div></blockquote>
+<p><strong>description: metunicode</strong></p>
+<blockquote>
+<div><p>Description of the object.</p>
+</div></blockquote>
+<p><strong>head_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of most recent version of this object (read only).</p>
+</div></blockquote>
+<p><strong>intensity: metfloat</strong></p>
+<blockquote>
+<div><p>intensity value.</p>
+</div></blockquote>
+<p><strong>last_modified: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at last object update (read only).</p>
+</div></blockquote>
+<p><strong>mz: metfloat</strong></p>
+<blockquote>
+<div><p>mz value.</p>
+</div></blockquote>
+<p><strong>name: metunicode</strong></p>
+<blockquote>
+<div><p>Name of the object.</p>
+</div></blockquote>
+<p><strong>prev_uid: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of previous version (read only).</p>
+</div></blockquote>
+<p><strong>unique_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique identifier for the object (read only).</p>
+</div></blockquote>
+<p><strong>username: metunicode</strong></p>
+<blockquote class="last">
+<div><p>Username who created the object (read only).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Set the default attributes.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="mzreference">
+<h2><a class="reference internal" href="#metatlas.MzReference" title="metatlas.MzReference"><code class="xref py py-class docutils literal"><span class="pre">MzReference</span></code></a><a class="headerlink" href="#mzreference" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="metatlas.MzReference">
+<em class="property">class </em><code class="descclassname">metatlas.</code><code class="descname">MzReference</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/metatlas_objects.html#MzReference"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.MzReference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">metatlas.metatlas_objects.Reference</span></code></p>
+<dl class="docutils">
+<dt>Source of the assertion that a compound has a given m/z and</dt>
+<dd>other properties directly tied to m/z.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>adduct: metunicode</strong></p>
+<blockquote>
+<div><p>Optional adduct.</p>
+</div></blockquote>
+<p><strong>creation_time: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at object creation (read only).</p>
+</div></blockquote>
+<p><strong>description: metunicode</strong></p>
+<blockquote>
+<div><p>Description of the object.</p>
+</div></blockquote>
+<p><strong>detected_polarity: metenum</strong></p>
+<blockquote>
+<div><p>detected_polarity value.</p>
+</div></blockquote>
+<p><strong>enabled: metbool</strong></p>
+<blockquote>
+<div><p>enabled value.</p>
+</div></blockquote>
+<p><strong>head_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of most recent version of this object (read only).</p>
+</div></blockquote>
+<p><strong>last_modified: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at last object update (read only).</p>
+</div></blockquote>
+<p><strong>lcms_run: metinstance</strong></p>
+<blockquote>
+<div><p>lcms_run value.</p>
+</div></blockquote>
+<p><strong>modification: metunicode</strong></p>
+<blockquote>
+<div><p>Optional modification.</p>
+</div></blockquote>
+<p><strong>mz: metfloat</strong></p>
+<blockquote>
+<div><p>mz value.</p>
+</div></blockquote>
+<p><strong>mz_tolerance: metfloat</strong></p>
+<blockquote>
+<div><p>mz_tolerance value.</p>
+</div></blockquote>
+<p><strong>mz_tolerance_units: metenum</strong></p>
+<blockquote>
+<div><p>mz_tolerance_units value.</p>
+</div></blockquote>
+<p><strong>name: metunicode</strong></p>
+<blockquote>
+<div><p>Name of the object.</p>
+</div></blockquote>
+<p><strong>observed_formula: metunicode</strong></p>
+<blockquote>
+<div><p>Optional observed formula.</p>
+</div></blockquote>
+<p><strong>prev_uid: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of previous version (read only).</p>
+</div></blockquote>
+<p><strong>ref_type: metunicode</strong></p>
+<blockquote>
+<div><p>The type of reference.</p>
+</div></blockquote>
+<p><strong>unique_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique identifier for the object (read only).</p>
+</div></blockquote>
+<p><strong>username: metunicode</strong></p>
+<blockquote class="last">
+<div><p>Username who created the object (read only).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Set the default attributes.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="reference">
+<h2><a class="reference internal" href="#metatlas.Reference" title="metatlas.Reference"><code class="xref py py-class docutils literal"><span class="pre">Reference</span></code></a><a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="metatlas.Reference">
+<em class="property">class </em><code class="descclassname">metatlas.</code><code class="descname">Reference</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/metatlas_objects.html#Reference"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.Reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">metatlas.metatlas_objects.MetatlasObject</span></code></p>
+<dl class="docutils">
+<dt>Place holder for future reference sources.</dt>
+<dd>We expect many in silico methods will soon be robust enough to suggest
+retention times, m/z, and fragmentation.
+Pactolus is a great example of this.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>creation_time: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at object creation (read only).</p>
+</div></blockquote>
+<p><strong>description: metunicode</strong></p>
+<blockquote>
+<div><p>Description of the object.</p>
+</div></blockquote>
+<p><strong>enabled: metbool</strong></p>
+<blockquote>
+<div><p>enabled value.</p>
+</div></blockquote>
+<p><strong>head_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of most recent version of this object (read only).</p>
+</div></blockquote>
+<p><strong>last_modified: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at last object update (read only).</p>
+</div></blockquote>
+<p><strong>lcms_run: metinstance</strong></p>
+<blockquote>
+<div><p>lcms_run value.</p>
+</div></blockquote>
+<p><strong>name: metunicode</strong></p>
+<blockquote>
+<div><p>Name of the object.</p>
+</div></blockquote>
+<p><strong>prev_uid: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of previous version (read only).</p>
+</div></blockquote>
+<p><strong>ref_type: metunicode</strong></p>
+<blockquote>
+<div><p>The type of reference.</p>
+</div></blockquote>
+<p><strong>unique_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique identifier for the object (read only).</p>
+</div></blockquote>
+<p><strong>username: metunicode</strong></p>
+<blockquote class="last">
+<div><p>Username who created the object (read only).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Set the default attributes.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="rtreference">
+<h2><a class="reference internal" href="#metatlas.RtReference" title="metatlas.RtReference"><code class="xref py py-class docutils literal"><span class="pre">RtReference</span></code></a><a class="headerlink" href="#rtreference" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="metatlas.RtReference">
+<em class="property">class </em><code class="descclassname">metatlas.</code><code class="descname">RtReference</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/metatlas_objects.html#RtReference"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.RtReference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">metatlas.metatlas_objects.Reference</span></code></p>
+<p>RtReference object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>creation_time: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at object creation (read only).</p>
+</div></blockquote>
+<p><strong>description: metunicode</strong></p>
+<blockquote>
+<div><p>Description of the object.</p>
+</div></blockquote>
+<p><strong>enabled: metbool</strong></p>
+<blockquote>
+<div><p>enabled value.</p>
+</div></blockquote>
+<p><strong>head_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of most recent version of this object (read only).</p>
+</div></blockquote>
+<p><strong>last_modified: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at last object update (read only).</p>
+</div></blockquote>
+<p><strong>lcms_run: metinstance</strong></p>
+<blockquote>
+<div><p>lcms_run value.</p>
+</div></blockquote>
+<p><strong>name: metunicode</strong></p>
+<blockquote>
+<div><p>Name of the object.</p>
+</div></blockquote>
+<p><strong>prev_uid: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of previous version (read only).</p>
+</div></blockquote>
+<p><strong>ref_type: metunicode</strong></p>
+<blockquote>
+<div><p>The type of reference.</p>
+</div></blockquote>
+<p><strong>rt_max: metfloat</strong></p>
+<blockquote>
+<div><p>rt_max value.</p>
+</div></blockquote>
+<p><strong>rt_min: metfloat</strong></p>
+<blockquote>
+<div><p>rt_min value.</p>
+</div></blockquote>
+<p><strong>rt_peak: metfloat</strong></p>
+<blockquote>
+<div><p>rt_peak value.</p>
+</div></blockquote>
+<p><strong>rt_units: metenum</strong></p>
+<blockquote>
+<div><p>rt_units value.</p>
+</div></blockquote>
+<p><strong>unique_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique identifier for the object (read only).</p>
+</div></blockquote>
+<p><strong>username: metunicode</strong></p>
+<blockquote class="last">
+<div><p>Username who created the object (read only).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Set the default attributes.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="sample">
+<h2><a class="reference internal" href="#metatlas.Sample" title="metatlas.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a><a class="headerlink" href="#sample" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="metatlas.Sample">
+<em class="property">class </em><code class="descclassname">metatlas.</code><code class="descname">Sample</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metatlas/metatlas_objects.html#Sample"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metatlas.Sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">metatlas.metatlas_objects.MetatlasObject</span></code></p>
+<p>A Sample is the material that is processed with a Method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>creation_time: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at object creation (read only).</p>
+</div></blockquote>
+<p><strong>description: metunicode</strong></p>
+<blockquote>
+<div><p>Description of the object.</p>
+</div></blockquote>
+<p><strong>head_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of most recent version of this object (read only).</p>
+</div></blockquote>
+<p><strong>last_modified: metint</strong></p>
+<blockquote>
+<div><p>Unix timestamp at last object update (read only).</p>
+</div></blockquote>
+<p><strong>name: metunicode</strong></p>
+<blockquote>
+<div><p>Name of the object.</p>
+</div></blockquote>
+<p><strong>prev_uid: metunicode</strong></p>
+<blockquote>
+<div><p>Unique id of previous version (read only).</p>
+</div></blockquote>
+<p><strong>unique_id: metunicode</strong></p>
+<blockquote>
+<div><p>Unique identifier for the object (read only).</p>
+</div></blockquote>
+<p><strong>username: metunicode</strong></p>
+<blockquote class="last">
+<div><p>Username who created the object (read only).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Set the default attributes.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 - 2017, Metatlas contributors.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

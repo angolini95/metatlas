@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Metabolite Atlas &#8212; Metatlas 0.7 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.3.6/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.7',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="source/installation.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+  
+  
+      <a href="https://github.com/blink1073/oct2py"
+         class="visible-desktop"><img
+        style="position: absolute; top: 50px; right: 0; border: 0; z-index:1"
+        src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"
+        alt="Fork me on GitHub"></a>
+  
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          Metatlas</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.7</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/api/metatlas.html"><code class="docutils literal"><span class="pre">metatlas</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/info.html">Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/info.html#data-model">Data Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/info.html#provenance-model">Provenance Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/info.html#visualization">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/admin.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/admin.html#nersc">NERSC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/admin.html#mysql">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/admin.html#cron">CRON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/admin.html#anaconda">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/admin.html#r-packages">R packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/admin.html#rdkit-pacakge-on-debian-ubuntu">RDKIT Pacakge on Debian/Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/admin.html#synchronizing-the-repo">Synchronizing the Repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/admin.html#id1">Administration</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Metabolite Atlas</a><ul>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#id1">API Reference</a></li>
+<li><a class="reference internal" href="#id2">Installation</a></li>
+<li><a class="reference internal" href="#id3">Examples</a></li>
+<li><a class="reference internal" href="#id4">Information</a></li>
+<li><a class="reference internal" href="#id5">Admin</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="source/installation.html" title="Next Chapter: Installation"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Installation &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/index.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Metabolite Atlas</a><ul>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#id1">API Reference</a></li>
+<li><a class="reference internal" href="#id2">Installation</a></li>
+<li><a class="reference internal" href="#id3">Examples</a></li>
+<li><a class="reference internal" href="#id4">Information</a></li>
+<li><a class="reference internal" href="#id5">Admin</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="metabolite-atlas">
+<h1>Metabolite Atlas<a class="headerlink" href="#metabolite-atlas" title="Permalink to this headline">¶</a></h1>
+<p>Metabolomics is the comprehensive profiling of the small molecule composition of a biological sample. This approach is being used to provide new insights into a variety of biological systems (clinical, bioenergy, etc.). A grand challenge for metabolomics is the complexity of the data, which often include many experimental artifacts. This is compounded by the tremendous chemical diversity of metabolites where identification of each uncharacterized metabolite is in many ways its own puzzle. The Metabolite Atlas project will provide easy to use tools that enable a scientist to quickly capture knowledge about what compounds they have observed and to propagate that knowledge to future experiments. Instead of having to sift through billions of data points, a scientist will use pre-existing method specific metabolite atlas results to suggest candidate identifications as soon as the data is generated.</p>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Parse LCMS mzML files to Pytables (HDF)</li>
+<li><dl class="first docutils">
+<dt>Query and plot LCMS data</dt>
+<dd><ul class="first last">
+<li>Extracted-ion chromatogram (XIC) data</li>
+<li>Spectrogram data</li>
+<li>HeatMap of Retention Time vs (m/z)</li>
+<li>Generic query for (rt, mz, i) data</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Custom plotters for XIC, Chromatogram, and Heatmap</li>
+</ul>
+<p>Local</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="id1">
+<h2><a class="reference external" href="source/api/metatlas.html">API Reference</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Documentation for the functions included in Metatlas.</p>
+</div>
+<div class="section" id="id2">
+<h2><a class="reference external" href="source/installation.rst">Installation</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>How to install Metatlas on Nersc.</p>
+</div>
+<div class="section" id="id3">
+<h2><a class="reference external" href="source/examples.rst">Examples</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Introductory examples.</p>
+</div>
+<div class="section" id="id4">
+<h2><a class="reference external" href="source/info.rst">Information</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Other information about Metatlas.</p>
+</div>
+<div class="section" id="id5">
+<h2><a class="reference external" href="source/admin.rst">Admin</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Information about Metatlas administration.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 - 2017, Metatlas contributors.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

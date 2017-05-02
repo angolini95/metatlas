@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Administration &#8212; Metatlas 0.7 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.3.6/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.7',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Information" href="info.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+  
+  
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Metatlas</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.7</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/metatlas.html"><code class="docutils literal"><span class="pre">metatlas</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html#data-model">Data Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html#provenance-model">Provenance Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html#visualization">Visualization</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#nersc">NERSC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#mysql">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#cron">CRON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#anaconda">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#r-packages">R packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#rdkit-pacakge-on-debian-ubuntu">RDKIT Pacakge on Debian/Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#synchronizing-the-repo">Synchronizing the Repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id1">Administration</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Administration</a></li>
+<li><a class="reference internal" href="#nersc">NERSC</a></li>
+<li><a class="reference internal" href="#mysql">MySQL</a></li>
+<li><a class="reference internal" href="#cron">CRON</a></li>
+<li><a class="reference internal" href="#anaconda">Anaconda</a></li>
+<li><a class="reference internal" href="#r-packages">R packages</a></li>
+<li><a class="reference internal" href="#rdkit-pacakge-on-debian-ubuntu">RDKIT Pacakge on Debian/Ubuntu</a></li>
+<li><a class="reference internal" href="#synchronizing-the-repo">Synchronizing the Repo</a></li>
+<li><a class="reference internal" href="#id1">Administration</a><ul>
+<li><a class="reference internal" href="#id2">NERSC</a></li>
+<li><a class="reference internal" href="#id3">MySQL</a></li>
+<li><a class="reference internal" href="#id4">CRON</a></li>
+<li><a class="reference internal" href="#id5">Anaconda</a></li>
+<li><a class="reference internal" href="#id6">R packages</a></li>
+<li><a class="reference internal" href="#id7">RDKIT Pacakge on Debian/Ubuntu</a></li>
+<li><a class="reference internal" href="#id8">Synchronizing the Repo</a></li>
+<li><a class="reference internal" href="#synchronizing-the-repo-between-github-and-nersc">Synchronizing the Repo Between Github and NERSC</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="info.html" title="Previous Chapter: Information"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Information</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/source/admin.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Administration</a></li>
+<li><a class="reference internal" href="#nersc">NERSC</a></li>
+<li><a class="reference internal" href="#mysql">MySQL</a></li>
+<li><a class="reference internal" href="#cron">CRON</a></li>
+<li><a class="reference internal" href="#anaconda">Anaconda</a></li>
+<li><a class="reference internal" href="#r-packages">R packages</a></li>
+<li><a class="reference internal" href="#rdkit-pacakge-on-debian-ubuntu">RDKIT Pacakge on Debian/Ubuntu</a></li>
+<li><a class="reference internal" href="#synchronizing-the-repo">Synchronizing the Repo</a></li>
+<li><a class="reference internal" href="#id1">Administration</a><ul>
+<li><a class="reference internal" href="#id2">NERSC</a></li>
+<li><a class="reference internal" href="#id3">MySQL</a></li>
+<li><a class="reference internal" href="#id4">CRON</a></li>
+<li><a class="reference internal" href="#id5">Anaconda</a></li>
+<li><a class="reference internal" href="#id6">R packages</a></li>
+<li><a class="reference internal" href="#id7">RDKIT Pacakge on Debian/Ubuntu</a></li>
+<li><a class="reference internal" href="#id8">Synchronizing the Repo</a></li>
+<li><a class="reference internal" href="#synchronizing-the-repo-between-github-and-nersc">Synchronizing the Repo Between Github and NERSC</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="administration">
+<h1>Administration<a class="headerlink" href="#administration" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="nersc">
+<h1>NERSC<a class="headerlink" href="#nersc" title="Permalink to this headline">¶</a></h1>
+<p>The project folder at NERSC is <code class="docutils literal"><span class="pre">/project/projectdirs/metatlas/</span></code>.</p>
+<p>Raw data is stored in <code class="docutils literal"><span class="pre">/project/projectdirs/metatlas/raw_data</span></code>.</p>
+<p>Log in to NERSC via <code class="docutils literal"><span class="pre">ssh</span> <span class="pre">username&#64;corigrid.nersc.gov</span></code>.</p>
+<p>There is a pseudo-super user account called <code class="docutils literal"><span class="pre">pasteur</span></code>. To log in to
+pasteur:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">globus</span>
+<span class="n">myproxy</span><span class="o">-</span><span class="n">logon</span> <span class="o">-</span><span class="n">s</span> <span class="n">nerscca</span><span class="o">.</span><span class="n">nersc</span><span class="o">.</span><span class="n">gov</span>
+<span class="n">NERSC</span> <span class="n">PW</span>
+<span class="n">gsissh</span> <span class="n">localhost</span> <span class="o">-</span><span class="n">p</span> <span class="mi">2222</span> <span class="o">-</span><span class="n">l</span> <span class="n">pasteur</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mysql">
+<h1>MySQL<a class="headerlink" href="#mysql" title="Permalink to this headline">¶</a></h1>
+<p>We have a MySql database at NERSC.</p>
+<p>The remote path (from python) is
+<code class="docutils literal"><span class="pre">mysql+pymysql://meta_atlas_admin:&lt;password&gt;&#64;scidb1.nersc.gov/meta_atlas</span></code></p>
+<p>The local path (at NERSC) is:
+<code class="docutils literal"><span class="pre">mysql</span> <span class="pre">meta_atlas</span> <span class="pre">-u</span> <span class="pre">meta_atlas_admin</span> <span class="pre">-h</span> <span class="pre">scidb1.nersc.gov</span> <span class="pre">-p</span></code>.</p>
+<p>You can use the database on a local machine or a machine not at NERC. Here are the steps</p>
+<p>Clone the database on NERSC</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysqldump</span> <span class="n">meta_atlas</span> <span class="o">-</span><span class="n">u</span> <span class="n">meta_atlas_admin</span> <span class="o">-</span><span class="n">h</span> <span class="n">scidb1</span><span class="o">.</span><span class="n">nersc</span><span class="o">.</span><span class="n">gov</span>  <span class="o">-</span><span class="n">p</span> <span class="o">&gt;</span> <span class="n">dump</span><span class="o">.</span><span class="n">sql</span>
+<span class="n">MYSQL</span> <span class="n">PW</span>
+</pre></div>
+</div>
+<p>Bring the databsae to local machine</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">scp</span> <span class="n">username</span><span class="nd">@corigrid</span><span class="o">.</span><span class="n">nersc</span><span class="o">.</span><span class="n">gov</span><span class="p">:</span><span class="n">dump</span><span class="o">.</span><span class="n">sql</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>Add the database to your mysql server</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">p</span>
+<span class="n">LOCAL</span> <span class="n">MYSQL</span> <span class="n">ADMIN</span> <span class="n">PW</span>
+<span class="n">CREATE</span> <span class="n">DATABASE</span> <span class="n">metatlas</span><span class="p">;</span>
+<span class="n">USE</span> <span class="n">metatlas</span><span class="p">;</span>
+<span class="n">SOURCE</span> <span class="n">dump</span><span class="o">.</span><span class="n">sql</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Create a user</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">USER</span> <span class="n">new_user</span> <span class="n">IDENTIFIED</span> <span class="n">BY</span> <span class="s1">&#39;some_password&#39;</span><span class="p">;</span>
+<span class="n">GRANT</span> <span class="n">ALL</span> <span class="n">ON</span> <span class="n">my_project_copy</span><span class="o">.*</span> <span class="n">TO</span> <span class="s1">&#39;new_user&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span> <span class="n">IDENTIFIED</span> <span class="n">BY</span> <span class="s1">&#39;some_password&#39;</span><span class="p">;</span>
+<span class="n">FLUSH</span> <span class="n">PRIVILEGES</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Alternatively, you can create a user using myphpadmin and give him/her full access to the database.</p>
+<p>Add in index and specify type for inchi keys</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>ALTER TABLE compounds MODIFY inchi_key VARCHAR(27);
+ALTER TABLE `compounds` ADD INDEX `inchi_key` (`inchi_key`);
+CREATE INDEX index_name ON compounds (name(30));
+ALTER TABLE lcmsruns MODIFY username VARCHAR(32);
+ALTER TABLE `lcmsruns` ADD INDEX `username` (`username`);
+ALTER TABLE lcmsruns MODIFY name VARCHAR(1279);
+ALTER TABLE `lcmsruns` ADD INDEX `username` (`username`);
+</pre></div>
+</div>
+<p>Add index for many-to-many tables</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">compoundidentifications_compound</span> <span class="n">MODIFY</span> <span class="n">source_id</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">);</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">compoundidentifications_compound</span> <span class="n">ADD</span> <span class="n">INDEX</span> <span class="n">source_id</span> <span class="p">(</span><span class="n">source_id</span><span class="p">);</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">compoundidentifications_compound</span> <span class="n">MODIFY</span> <span class="n">target_id</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">);</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">compoundidentifications_compound</span> <span class="n">ADD</span> <span class="n">INDEX</span> <span class="n">target_id</span> <span class="p">(</span><span class="n">target_id</span><span class="p">);</span>
+
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">compoundidentifications_rt_references</span> <span class="n">MODIFY</span> <span class="n">source_id</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">);</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">compoundidentifications_rt_references</span> <span class="n">ADD</span> <span class="n">INDEX</span> <span class="n">source_id</span> <span class="p">(</span><span class="n">source_id</span><span class="p">);</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">compoundidentifications_rt_references</span> <span class="n">MODIFY</span> <span class="n">target_id</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">);</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">compoundidentifications_rt_references</span> <span class="n">ADD</span> <span class="n">INDEX</span> <span class="n">target_id</span> <span class="p">(</span><span class="n">target_id</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Example query that has subqueries</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#select rtreferences.*</span>
+<span class="n">select</span> <span class="n">rtreferences</span><span class="o">.</span><span class="n">rt_peak</span><span class="p">,</span> <span class="n">rtreferences</span><span class="o">.</span><span class="n">rt_min</span><span class="p">,</span> <span class="n">rtreferences</span><span class="o">.</span><span class="n">rt_max</span><span class="p">,</span> <span class="n">rtreferences</span><span class="o">.</span><span class="n">rt_units</span><span class="p">,</span> <span class="n">rtreferences</span><span class="o">.</span><span class="n">last_modified</span><span class="p">,</span> <span class="n">rtreferences</span><span class="o">.</span><span class="n">username</span>
+<span class="kn">from</span> <span class="nn">rtreferences</span><span class="p">,</span> <span class="n">compoundidentifications</span><span class="p">,</span> <span class="n">compoundidentifications_rt_references</span><span class="p">,</span> <span class="n">compoundidentifications_compound</span><span class="p">,</span> <span class="n">compounds</span>
+<span class="n">where</span>
+<span class="c1">#compoundidentifications.username = &#39;bpb&#39; and</span>
+<span class="n">rtreferences</span><span class="o">.</span><span class="n">unique_id</span> <span class="o">=</span> <span class="n">compoundidentifications_rt_references</span><span class="o">.</span><span class="n">target_id</span> <span class="ow">and</span>
+<span class="n">compoundidentifications</span><span class="o">.</span><span class="n">unique_id</span> <span class="o">=</span> <span class="n">compoundidentifications_rt_references</span><span class="o">.</span><span class="n">source_id</span> <span class="ow">and</span>
+<span class="n">compoundidentifications</span><span class="o">.</span><span class="n">unique_id</span> <span class="o">=</span> <span class="n">compoundidentifications_compound</span><span class="o">.</span><span class="n">source_id</span> <span class="ow">and</span>
+<span class="n">compounds</span><span class="o">.</span><span class="n">unique_id</span> <span class="o">=</span> <span class="n">compoundidentifications_compound</span><span class="o">.</span><span class="n">target_id</span> <span class="ow">and</span>
+<span class="n">compounds</span><span class="o">.</span><span class="n">inchi_key</span> <span class="o">=</span> <span class="s1">&#39;MTCFGRXMJLQNBG-REOHCLBHSA-N&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cron">
+<h1>CRON<a class="headerlink" href="#cron" title="Permalink to this headline">¶</a></h1>
+<p>We have a CRON job set up to run metatlas directory watcher every ten
+minutes. The file that is run is
+<code class="docutils literal"><span class="pre">/project/projectdirs/metatlas/run_dirwatch2.sh</span></code>. The CRON job
+settings are in
+<code class="docutils literal"><span class="pre">/project/projectdirs/metatlas/crontab.corigrid.pasteur</span></code>. You have to
+log into pasteur to modify the CRON job.</p>
+</div>
+<div class="section" id="anaconda">
+<h1>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this headline">¶</a></h1>
+<p>We have an Anaconda instance at NERSC:
+<code class="docutils literal"><span class="pre">/project/projectdirs/metatlas/anaconda</span></code>. We have all the required
+libraries stored there. See the <code class="docutils literal"><span class="pre">installation</span></code> instructions for how to
+users are meant to use it. You can <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span></code> and
+<code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code>. The packages required for <code class="docutils literal"><span class="pre">metatlas</span></code> are listed the
+<code class="docutils literal"><span class="pre">setup.py</span></code>, except for qgrid, which was installed directly from the
+QGrid repo as <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">https://github.com/quantopian/qgrid/</span></code>.</p>
+</div>
+<div class="section" id="r-packages">
+<h1>R packages<a class="headerlink" href="#r-packages" title="Permalink to this headline">¶</a></h1>
+<p>We are keeping R packages in
+<code class="docutils literal"><span class="pre">/global/project/projectdirs/metatlas/r_pkgs/</span></code>, which are
+automatically available because we set the <code class="docutils literal"><span class="pre">R_LIBS</span></code> variable in
+<code class="docutils literal"><span class="pre">metatlas/__init__.py</span></code>. To load new packages, log in to NERSC, and
+follow this example (replacing the source and lib name with your own):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ module load R
+$ R
+&gt; source(&quot;http://bioconductor.org/biocLite.R&quot;)
+&gt; # accept installation into a local directory (copy that directory)
+&gt; biocLite(&quot;my_lib&quot;)
+&gt; quit()
+$ cp -r ~/R/x86_64-unknown-linux-gnu-library/3.1/my_lib /global/project/projectdirs/metatlas/r_pkgs/my_lib
+</pre></div>
+</div>
+<p>The currently installed packages are:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">biocLite</span><span class="p">(</span><span class="s2">&quot;mzR&quot;</span><span class="p">)</span>
+<span class="n">biocLite</span><span class="p">(</span><span class="s2">&quot;xcms&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="rdkit-pacakge-on-debian-ubuntu">
+<h1>RDKIT Pacakge on Debian/Ubuntu<a class="headerlink" href="#rdkit-pacakge-on-debian-ubuntu" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">conda</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">rdkit</span> <span class="n">rdkit</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="synchronizing-the-repo">
+<h1>Synchronizing the Repo<a class="headerlink" href="#synchronizing-the-repo" title="Permalink to this headline">¶</a></h1>
+<p>There is a <code class="docutils literal"><span class="pre">make</span> <span class="pre">deploy</span></code> target in the top level <code class="docutils literal"><span class="pre">Makefile</span></code> in the
+repo that will publish the latest changes to documentation and <code class="docutils literal"><span class="pre">rsync</span></code>
+the files to the anaconda environment at NERSC.</p>
+</div>
+<div class="section" id="id1">
+<h1>Administration<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>NERSC<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>The project folder at NERSC is <code class="docutils literal"><span class="pre">/project/projectdirs/metatlas/</span></code>.</p>
+<p>Raw data is stored in <code class="docutils literal"><span class="pre">/project/projectdirs/metatlas/raw_data</span></code>.</p>
+<p>Log in to NERSC via <code class="docutils literal"><span class="pre">ssh</span> <span class="pre">username&#64;corigrid.nersc.gov</span></code>.</p>
+<p>There is a pseudo-super user account called <code class="docutils literal"><span class="pre">pasteur</span></code>. To log in to
+pasteur:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">globus</span>
+<span class="n">myproxy</span><span class="o">-</span><span class="n">logon</span> <span class="o">-</span><span class="n">s</span> <span class="n">nerscca</span><span class="o">.</span><span class="n">nersc</span><span class="o">.</span><span class="n">gov</span>
+<span class="n">NERSC</span> <span class="n">PW</span>
+<span class="n">gsissh</span> <span class="n">localhost</span> <span class="o">-</span><span class="n">p</span> <span class="mi">2222</span> <span class="o">-</span><span class="n">l</span> <span class="n">pasteur</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>MySQL<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>We have a MySql database at NERSC.</p>
+<p>The remote path (from python) is
+<code class="docutils literal"><span class="pre">mysql+pymysql://meta_atlas_admin:&lt;password&gt;&#64;scidb1.nersc.gov/meta_atlas</span></code></p>
+<p>The local path (at NERSC) is:
+<code class="docutils literal"><span class="pre">mysql</span> <span class="pre">meta_atlas</span> <span class="pre">-u</span> <span class="pre">meta_atlas_admin</span> <span class="pre">-h</span> <span class="pre">scidb1.nersc.gov</span> <span class="pre">-p</span></code>.</p>
+<p>You can use the database on a local machine or a machine not at NERC. Here are the steps</p>
+<p>Clone the database on NERSC</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysqldump</span> <span class="n">meta_atlas</span> <span class="o">-</span><span class="n">u</span> <span class="n">meta_atlas_admin</span> <span class="o">-</span><span class="n">h</span> <span class="n">scidb1</span><span class="o">.</span><span class="n">nersc</span><span class="o">.</span><span class="n">gov</span>  <span class="o">-</span><span class="n">p</span> <span class="o">&gt;</span> <span class="n">dump</span><span class="o">.</span><span class="n">sql</span>
+<span class="n">MYSQL</span> <span class="n">PW</span>
+</pre></div>
+</div>
+<p>Bring the databsae to local machine</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">scp</span> <span class="n">username</span><span class="nd">@corigrid</span><span class="o">.</span><span class="n">nersc</span><span class="o">.</span><span class="n">gov</span><span class="p">:</span><span class="n">dump</span><span class="o">.</span><span class="n">sql</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>Add the database to your mysql server</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">p</span>
+<span class="n">LOCAL</span> <span class="n">MYSQL</span> <span class="n">ADMIN</span> <span class="n">PW</span>
+<span class="n">CREATE</span> <span class="n">DATABASE</span> <span class="n">metatlas</span><span class="p">;</span>
+<span class="n">USE</span> <span class="n">metatlas</span><span class="p">;</span>
+<span class="n">SOURCE</span> <span class="n">dump</span><span class="o">.</span><span class="n">sql</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Create a user</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">USER</span> <span class="n">new_user</span> <span class="n">IDENTIFIED</span> <span class="n">BY</span> <span class="s1">&#39;some_password&#39;</span><span class="p">;</span>
+<span class="n">GRANT</span> <span class="n">ALL</span> <span class="n">ON</span> <span class="n">my_project_copy</span><span class="o">.*</span> <span class="n">TO</span> <span class="s1">&#39;new_user&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span> <span class="n">IDENTIFIED</span> <span class="n">BY</span> <span class="s1">&#39;some_password&#39;</span><span class="p">;</span>
+<span class="n">FLUSH</span> <span class="n">PRIVILEGES</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Alternatively, you can create a user using myphpadmin and give him/her full access to the database.</p>
+</div>
+<div class="section" id="id4">
+<h2>CRON<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>We have a CRON job set up to run metatlas directory watcher every ten
+minutes. The file that is run is
+<code class="docutils literal"><span class="pre">/project/projectdirs/metatlas/run_dirwatch2.sh</span></code>. The CRON job
+settings are in
+<code class="docutils literal"><span class="pre">/project/projectdirs/metatlas/crontab.corigrid.pasteur</span></code>. You have to
+log into pasteur to modify the CRON job.</p>
+</div>
+<div class="section" id="id5">
+<h2>Anaconda<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>We have an Anaconda instance at NERSC:
+<code class="docutils literal"><span class="pre">/project/projectdirs/metatlas/anaconda</span></code>. We have all the required
+libraries stored there. See the <code class="docutils literal"><span class="pre">installation</span></code> instructions for how to
+users are meant to use it. You can <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span></code> and
+<code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code>. The packages required for <code class="docutils literal"><span class="pre">metatlas</span></code> are listed the
+<code class="docutils literal"><span class="pre">setup.py</span></code>, except for</p>
+<p>qgrid, which was installed directly from the
+QGrid repo as <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">https://github.com/quantopian/qgrid/</span></code></p>
+<p>and</p>
+<p>RDKit, which was installed from the rdkit conda build as
+<code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">https://conda.anaconda.org/rdkit</span> <span class="pre">rdkit</span></code></p>
+</div>
+<div class="section" id="id6">
+<h2>R packages<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>We are keeping R packages in
+<code class="docutils literal"><span class="pre">/global/project/projectdirs/metatlas/r_pkgs/</span></code>, which are
+automatically available because we set the <code class="docutils literal"><span class="pre">R_LIBS</span></code> variable in
+<code class="docutils literal"><span class="pre">metatlas/__init__.py</span></code>. To load new packages, log in to NERSC, and
+follow this example (replacing the source and lib name with your own):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ module load R
+$ R
+&gt; source(&quot;http://bioconductor.org/biocLite.R&quot;)
+&gt; # accept installation into a local directory (copy that directory)
+&gt; biocLite(&quot;my_lib&quot;)
+&gt; quit()
+$ cp -r ~/R/x86_64-unknown-linux-gnu-library/3.1/my_lib /global/project/projectdirs/metatlas/r_pkgs/my_lib
+</pre></div>
+</div>
+<p>The currently installed packages are:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">biocLite</span><span class="p">(</span><span class="s2">&quot;mzR&quot;</span><span class="p">)</span>
+<span class="n">biocLite</span><span class="p">(</span><span class="s2">&quot;xcms&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>RDKIT Pacakge on Debian/Ubuntu<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">conda</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">rdkit</span> <span class="n">rdkit</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>Synchronizing the Repo<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>There is a <code class="docutils literal"><span class="pre">make</span> <span class="pre">deploy</span></code> target in the top level <code class="docutils literal"><span class="pre">Makefile</span></code> in the
+repo that will publish the latest changes to documentation and <code class="docutils literal"><span class="pre">rsync</span></code>
+the files to the anaconda environment at NERSC.</p>
+</div>
+<div class="section" id="synchronizing-the-repo-between-github-and-nersc">
+<h2>Synchronizing the Repo Between Github and NERSC<a class="headerlink" href="#synchronizing-the-repo-between-github-and-nersc" title="Permalink to this headline">¶</a></h2>
+<p>Work in progress...
+Also detailed here for reference:
+<a class="reference external" href="https://github.com/biorack/metatlas/blob/master/update_nersc_packages.sh">https://github.com/biorack/metatlas/blob/master/update_nersc_packages.sh</a></p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 - 2017, Metatlas contributors.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

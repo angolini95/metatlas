@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>metatlas.h5_query &#8212; Metatlas 0.7 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.3.6/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.7',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+  
+  
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Metatlas</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.7</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/api/metatlas.html"><code class="docutils literal"><span class="pre">metatlas</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/info.html">Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/info.html#data-model">Data Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/info.html#provenance-model">Provenance Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/info.html#visualization">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/admin.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/admin.html#nersc">NERSC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/admin.html#mysql">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/admin.html#cron">CRON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/admin.html#anaconda">Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/admin.html#r-packages">R packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/admin.html#rdkit-pacakge-on-debian-ubuntu">RDKIT Pacakge on Debian/Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/admin.html#synchronizing-the-repo">Synchronizing the Repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/admin.html#id1">Administration</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <h1>Source code for metatlas.h5_query</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module used to define H5 queries.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">tables</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<div class="viewcode-block" id="get_data"><a class="viewcode-back" href="../../source/api/metatlas.html#metatlas.get_data">[docs]</a><span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">h5file</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get raw data from an h5file meeting given criteria.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    h5file: string or open pytables file</span>
+<span class="sd">        The path to the h5file or open file handle.</span>
+<span class="sd">    **kwargs</span>
+<span class="sd">        Optional search modifiers.  (e.g. min_r=0, max_mz=100, precursor_MZ=1).</span>
+<span class="sd">        Use verbose=True for displaying query messages.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : dictionary</span>
+<span class="sd">        Dictionary with arrays for &#39;i&#39;, &#39;mz&#39;, and &#39;rt&#39; values meeting criteria.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">is_h5_file</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">h5file</span><span class="p">,</span> <span class="n">tables</span><span class="o">.</span><span class="n">File</span><span class="p">):</span>
+        <span class="n">is_h5_file</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">h5file</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="n">h5file</span><span class="p">)</span>
+
+
+    <span class="c1"># Select the ms_level</span>
+    <span class="n">ms_level</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ms_level&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ms_level</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">ms1</span> <span class="o">=</span> <span class="n">h5file</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">ms1_neg</span><span class="o">.</span><span class="n">nrows</span> <span class="o">+</span> <span class="n">h5file</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">ms1_pos</span><span class="o">.</span><span class="n">nrows</span>
+        <span class="n">ms2</span> <span class="o">=</span> <span class="n">h5file</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">ms2_neg</span><span class="o">.</span><span class="n">nrows</span> <span class="o">+</span> <span class="n">h5file</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">ms2_pos</span><span class="o">.</span><span class="n">nrows</span>
+        <span class="n">ms_level</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">ms1</span> <span class="o">&gt;</span> <span class="n">ms2</span> <span class="k">else</span> <span class="mi">2</span>
+
+    <span class="c1"># Select the polarity</span>
+    <span class="n">polarity</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;polarity&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">polarity</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">ms_level</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">polarity</span> <span class="o">=</span> <span class="n">h5file</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">ms1_pos</span><span class="o">.</span><span class="n">nrows</span> <span class="o">&gt;</span> <span class="n">h5file</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">ms1_neg</span><span class="o">.</span><span class="n">nrows</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">polarity</span> <span class="o">=</span> <span class="n">h5file</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">ms2_pos</span><span class="o">.</span><span class="n">nrows</span> <span class="o">&gt;</span> <span class="n">h5file</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">ms2_neg</span><span class="o">.</span><span class="n">nrows</span>
+
+    <span class="c1"># Select the table</span>
+    <span class="k">if</span> <span class="n">ms_level</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;ms1_pos&#39;</span> <span class="k">if</span> <span class="n">polarity</span> <span class="k">else</span> <span class="s1">&#39;ms1_neg&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;ms2_pos&#39;</span> <span class="k">if</span> <span class="n">polarity</span> <span class="k">else</span> <span class="s1">&#39;ms2_neg&#39;</span>
+    <span class="k">if</span> <span class="s1">&#39;rt&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span> <span class="ow">or</span> <span class="s1">&#39;min_rt&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span> <span class="ow">or</span> <span class="s1">&#39;max_rt&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="n">data_table</span> <span class="o">=</span> <span class="n">h5file</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data_table</span> <span class="o">=</span> <span class="n">h5file</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;_mz&#39;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="c1"># Fall back on original node.</span>
+            <span class="n">data_table</span> <span class="o">=</span> <span class="n">h5file</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
+
+    <span class="c1"># Get the selected entries</span>
+    <span class="n">queries</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;rt&#39;</span><span class="p">,</span> <span class="s1">&#39;mz&#39;</span><span class="p">,</span> <span class="s1">&#39;precursor_MZ&#39;</span><span class="p">,</span> <span class="s1">&#39;precursor_intensity&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;collision_energy&#39;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="s1">&#39;min_</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">queries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;(</span><span class="si">%s</span><span class="s1"> &gt;= </span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;min_</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">name</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="s1">&#39;max_</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">queries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;(</span><span class="si">%s</span><span class="s1"> &lt;= </span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;max_</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">name</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">queries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;(</span><span class="si">%s</span><span class="s1"> == </span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">name</span><span class="p">]))</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="s1">&#39; &amp; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">queries</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;verbose&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Querying: </span><span class="si">%s</span><span class="s1"> from </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">data_table</span><span class="o">.</span><span class="n">_v_name</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">query</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data_table</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data_table</span><span class="o">.</span><span class="n">read_where</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;No data found matching criteria&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;verbose&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Query complete&#39;</span><span class="p">)</span>
+
+    <span class="c1"># close the file if opened</span>
+    <span class="k">if</span> <span class="n">is_h5_file</span><span class="p">:</span>
+        <span class="n">h5file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">data</span></div>
+
+
+<div class="viewcode-block" id="get_chromatogram"><a class="viewcode-back" href="../../source/api/metatlas.html#metatlas.get_chromatogram">[docs]</a><span class="k">def</span> <span class="nf">get_chromatogram</span><span class="p">(</span><span class="n">h5file</span><span class="p">,</span> <span class="n">min_mz</span><span class="p">,</span> <span class="n">max_mz</span><span class="p">,</span> <span class="n">aggregator</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get Chromatogram data - RT vs. intensity aggregation</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    h5file: string or open pytables file</span>
+<span class="sd">        The path to the h5file or open file handle.</span>
+<span class="sd">    min_mz : float</span>
+<span class="sd">        Minimum m/z value.</span>
+<span class="sd">    max_mz : float</span>
+<span class="sd">        Maximum m/z value.</span>
+<span class="sd">    ms_level : int</span>
+<span class="sd">        MS Level.</span>
+<span class="sd">    polarity: int</span>
+<span class="sd">        Plus proton (1) or Minus proton (0).</span>
+<span class="sd">    aggregator: function</span>
+<span class="sd">        Function to aggregate the intensity data.  Defaults to np.sum,</span>
+<span class="sd">        producing an XIC. For Base Peak Chromatogram, use np.max.</span>
+<span class="sd">    **kwargs</span>
+<span class="sd">        Optional search modifiers.  (e.g. precursor_MZ=1,</span>
+<span class="sd">            min_collision_energy=4)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : tuple of arrays</span>
+<span class="sd">        (rt_vals, i_vals) arrays in the desired range.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">h5file</span><span class="p">,</span> <span class="n">min_mz</span><span class="o">=</span><span class="n">min_mz</span><span class="p">,</span> <span class="n">max_mz</span><span class="o">=</span><span class="n">max_mz</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[],</span> <span class="p">[]</span>
+
+    <span class="n">rt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;rt&#39;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rt</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">rt</span><span class="p">],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">])]</span>
+    <span class="k">if</span> <span class="n">aggregator</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">:</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">rt</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">rt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rt</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">d</span><span class="p">,</span> <span class="n">rt</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">d</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+        <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;rt&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">edges</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">rt</span><span class="p">:</span>
+            <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;rt&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">val</span><span class="p">)</span>
+            <span class="n">i</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">aggregator</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">],</span> <span class="n">indices</span><span class="p">)))</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">rt</span><span class="p">,</span> <span class="n">i</span></div>
+
+
+<div class="viewcode-block" id="get_heatmap"><a class="viewcode-back" href="../../source/api/metatlas.html#metatlas.get_heatmap">[docs]</a><span class="k">def</span> <span class="nf">get_heatmap</span><span class="p">(</span><span class="n">h5file</span><span class="p">,</span> <span class="n">mz_bins</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get a HeatMap of RT vs MZ.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    h5file: string or open pytables file</span>
+<span class="sd">        The path to the h5file or open file handle.</span>
+<span class="sd">    mz_steps : int or array-like</span>
+<span class="sd">        Bins to use for the mz axis.</span>
+<span class="sd">    **kwargs</span>
+<span class="sd">        Optional search modifiers.  (e.g. precursor_MZ=1,</span>
+<span class="sd">            min_collision_energy=4)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : dict</span>
+<span class="sd">        Dictionary containing: &#39;arr&#39;, &#39;rt_bins&#39;, &#39;mz_bins&#39;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">h5file</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="n">rt_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;rt&#39;</span><span class="p">])</span>
+    <span class="n">rt_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">rt_values</span><span class="p">,</span> <span class="n">rt_values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">arr</span><span class="p">,</span> <span class="n">mz_bins</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram2d</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;mz&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;rt&#39;</span><span class="p">],</span>
+                                     <span class="n">weights</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">],</span>
+                                     <span class="n">bins</span><span class="o">=</span><span class="p">(</span><span class="n">mz_bins</span><span class="p">,</span> <span class="n">rt_bins</span><span class="p">))</span>
+
+    <span class="n">mz_centroid</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">mz_bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+                   <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">arr</span><span class="o">=</span><span class="n">arr</span><span class="p">,</span> <span class="n">rt_bins</span><span class="o">=</span><span class="n">rt_values</span><span class="p">,</span> <span class="n">mz_bins</span><span class="o">=</span><span class="n">mz_bins</span><span class="p">,</span>
+                <span class="n">mz_centroid</span><span class="o">=</span><span class="n">mz_centroid</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_spectrogram"><a class="viewcode-back" href="../../source/api/metatlas.html#metatlas.get_spectrogram">[docs]</a><span class="k">def</span> <span class="nf">get_spectrogram</span><span class="p">(</span><span class="n">h5file</span><span class="p">,</span> <span class="n">min_rt</span><span class="p">,</span> <span class="n">max_rt</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get cumulative I vs MZ in RT Range (spectrogram)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    h5file : table file handle</span>
+<span class="sd">        Handle to an open tables file.</span>
+<span class="sd">    min_rt : float</span>
+<span class="sd">        Minimum retention time.</span>
+<span class="sd">    max_rt : float</span>
+<span class="sd">        Maximum retention time.</span>
+<span class="sd">    bins : int or array-like</span>
+<span class="sd">        Desired bins for the histogram.</span>
+<span class="sd">    **kwargs</span>
+<span class="sd">        Optional search modifiers.  (e.g. precursor_MZ=1,</span>
+<span class="sd">            min_collision_energy=4)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : tuple of arrays</span>
+<span class="sd">        (mz_vals, i_vals) arrays in the desired range.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">h5file</span><span class="p">,</span> <span class="n">min_rt</span><span class="o">=</span><span class="n">min_rt</span><span class="p">,</span> <span class="n">max_rt</span><span class="o">=</span><span class="n">max_rt</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[],</span> <span class="p">[]</span>
+
+    <span class="n">i</span><span class="p">,</span> <span class="n">mz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;mz&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">])</span>
+    <span class="c1"># center the bins</span>
+    <span class="n">mz</span> <span class="o">=</span> <span class="p">(</span><span class="n">mz</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">mz</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mi">2</span>
+
+    <span class="k">return</span> <span class="n">mz</span><span class="p">,</span> <span class="n">i</span></div>
+
+
+<div class="viewcode-block" id="get_info"><a class="viewcode-back" href="../../source/api/metatlas.html#metatlas.get_info">[docs]</a><span class="k">def</span> <span class="nf">get_info</span><span class="p">(</span><span class="n">h5file</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get info about an LCMS HDF file</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    h5file: string or open pytables file</span>
+<span class="sd">        The path to the h5file or open file handle.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : dict</span>
+<span class="sd">        Number of rows for all of the tables in the file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">is_h5_file</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">h5file</span><span class="p">,</span> <span class="n">tables</span><span class="o">.</span><span class="n">File</span><span class="p">):</span>
+        <span class="n">is_h5_file</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">h5file</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="n">h5file</span><span class="p">)</span>
+
+    <span class="n">info</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">table_name</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;ms1_neg&#39;</span><span class="p">,</span> <span class="s1">&#39;ms1_pos&#39;</span><span class="p">,</span> <span class="s1">&#39;ms2_neg&#39;</span><span class="p">,</span> <span class="s1">&#39;ms2_pos&#39;</span><span class="p">]:</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="n">h5file</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s1">&#39;/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">table_name</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;nrows&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">nrows</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">table</span><span class="o">.</span><span class="n">nrows</span><span class="p">:</span>
+            <span class="n">info</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
+            <span class="k">continue</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;min_mz&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;mz&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;max_mz&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;mz&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;min_rt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;rt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;max_rt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;rt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="n">info</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
+
+    <span class="c1"># close the file if opened</span>
+    <span class="k">if</span> <span class="n">is_h5_file</span><span class="p">:</span>
+        <span class="n">h5file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+
+    <span class="k">return</span> <span class="n">info</span></div>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+    <span class="kn">from</span> <span class="nn">os.path</span> <span class="k">import</span> <span class="n">expandvars</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+
+    <span class="c1"># sys.path.insert(0,&#39;/global/homes/b/bpb/metatlas/metatlas/helpers/&#39; )</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">expandvars</span><span class="p">(</span><span class="s1">&#39;$HOME/dev/metatlas&#39;</span><span class="p">))</span>
+
+    <span class="kn">import</span> <span class="nn">argparse</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+    <span class="kn">from</span> <span class="nn">metatlas</span> <span class="k">import</span> <span class="n">plot_chromatogram</span><span class="p">,</span> <span class="n">plot_spectrogram</span><span class="p">,</span> <span class="n">plot_heatmap</span>
+
+    <span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;Query and plot MZML data from HDF files&quot;</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="n">desc</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-x&quot;</span><span class="p">,</span> <span class="s2">&quot;--xic&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Get and plot XIC&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-s&quot;</span><span class="p">,</span> <span class="s2">&quot;--spectrogram&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Get and plot Spectrogram&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--heatmap&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Get and plot Heatmap&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;input_file&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Input HDF file&quot;</span><span class="p">,</span>
+                        <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store&#39;</span><span class="p">)</span>
+
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="n">fname</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">input_file</span>
+    <span class="n">fid</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+    <span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">fname</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">xic</span><span class="p">:</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">get_chromatogram</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+        <span class="n">plot_chromatogram</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">basename</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">spectrogram</span><span class="p">:</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">get_spectrogram</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="n">plot_spectrogram</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">heatmap</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">get_heatmap</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+        <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;arr&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;rt_bins&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;mz_bins&#39;</span><span class="p">])</span>
+
+    <span class="c1"># close the file</span>
+    <span class="n">fid</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 - 2017, Metatlas contributors.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
